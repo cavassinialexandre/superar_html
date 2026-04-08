@@ -1,0 +1,106 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e42]:
+    - complementary [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - img [ref=e47]
+          - generic [ref=e51]:
+            - heading "Kaizen TPM" [level=1] [ref=e52]
+            - paragraph [ref=e53]: SUPERAR
+        - paragraph [ref=e55]: Menu
+        - navigation [ref=e56]:
+          - button "Dashboard" [ref=e57] [cursor=pointer]:
+            - img [ref=e59]
+            - generic [ref=e64]: Dashboard
+          - button "Grupos" [ref=e65] [cursor=pointer]:
+            - img [ref=e66]
+            - generic [ref=e71]: Grupos
+          - button "Historico" [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+            - generic [ref=e76]: Historico
+          - button "Administracao" [ref=e78] [cursor=pointer]:
+            - paragraph [ref=e79]: Administracao
+            - img [ref=e81]
+        - generic [ref=e85]:
+          - generic [ref=e88]: CS
+          - generic [ref=e90]:
+            - paragraph [ref=e91]: Carlos
+            - button "Puma Trocar unidade" [ref=e92] [cursor=pointer]:
+              - img [ref=e93]
+              - generic [ref=e95]:
+                - paragraph [ref=e96]: Puma
+                - paragraph [ref=e97]: Trocar unidade
+    - button [ref=e98] [cursor=pointer]:
+      - img [ref=e99]
+    - main [ref=e102]:
+      - generic [ref=e652]:
+        - generic [ref=e653]:
+          - navigation [ref=e654]:
+            - button "Grupos" [ref=e656] [cursor=pointer]
+            - generic [ref=e657]:
+              - img [ref=e658]
+              - generic [ref=e660]: Equipe Alpha
+          - heading "Equipe Alpha" [level=1] [ref=e661]
+          - paragraph [ref=e662]: Gerencia de Producao — Linha de Montagem A
+        - generic [ref=e664]:
+          - generic [ref=e665]:
+            - generic [ref=e667]: Operacional
+            - generic [ref=e668]:
+              - button "Auditoria" [ref=e669] [cursor=pointer]:
+                - img [ref=e670]
+                - text: Auditoria
+              - button "Follow-up" [ref=e674] [cursor=pointer]:
+                - img [ref=e675]
+                - text: Follow-up
+              - button "Historico" [ref=e678] [cursor=pointer]:
+                - img [ref=e679]
+                - text: Historico
+          - generic [ref=e682]:
+            - generic [ref=e683]:
+              - paragraph [ref=e684]: Progressao
+              - generic [ref=e700]: 3/5
+              - paragraph [ref=e705]: Passo 3 de 5
+            - generic [ref=e706]:
+              - paragraph [ref=e707]: Ultima Nota
+              - generic [ref=e708]: 87%
+            - generic [ref=e709]:
+              - paragraph [ref=e710]: Ultima Avaliacao
+              - paragraph [ref=e711]: 09 de março de 2026
+        - generic [ref=e712]:
+          - generic [ref=e714]:
+            - generic [ref=e715]:
+              - heading "Equipe" [level=3] [ref=e716]
+              - generic [ref=e717]: 4 membros
+            - generic [ref=e718]:
+              - generic [ref=e719]:
+                - img [ref=e721]
+                - paragraph [ref=e725]: Roberto Lima
+                - generic [ref=e726]: Facilitador
+              - generic [ref=e727]:
+                - img [ref=e729]
+                - paragraph [ref=e733]: Fernanda Souza
+                - generic [ref=e734]: Auditor
+              - generic [ref=e735]:
+                - img [ref=e737]
+                - paragraph [ref=e741]: Lucas Almeida
+                - generic [ref=e742]: Membro
+              - generic [ref=e743]:
+                - img [ref=e745]
+                - paragraph [ref=e749]: Patricia Nunes
+                - generic [ref=e750]: Membro
+          - generic [ref=e752]:
+            - heading "Ultimas Avaliacoes" [level=3] [ref=e754]
+            - generic [ref=e755]:
+              - generic [ref=e756] [cursor=pointer]:
+                - generic [ref=e757]: Auditoria
+                - generic [ref=e758]:
+                  - paragraph [ref=e759]: Passo 3 — por Carlos Silva
+                  - paragraph [ref=e760]: 10 de mar. de 2026
+                - generic [ref=e761]: 87%
+              - generic [ref=e762] [cursor=pointer]:
+                - generic [ref=e763]: Follow-up
+                - generic [ref=e764]:
+                  - paragraph [ref=e765]: Passo 3 — por Ana Oliveira
+                  - paragraph [ref=e766]: 01 de mar. de 2026
+                - generic [ref=e767]: 82%
+  - generic [ref=e362]: "0"

@@ -1,0 +1,153 @@
+- generic [ref=e1]:
+  - generic [ref=e42]:
+    - complementary [ref=e43]:
+      - generic [ref=e44]:
+        - img [ref=e47]
+        - navigation [ref=e56]:
+          - button [ref=e368] [cursor=pointer]:
+            - img [ref=e59]
+          - button [ref=e369] [cursor=pointer]:
+            - img [ref=e66]
+          - button [ref=e370] [cursor=pointer]:
+            - img [ref=e73]
+          - button [ref=e371] [cursor=pointer]:
+            - img [ref=e372]
+          - button [ref=e375] [cursor=pointer]:
+            - img [ref=e376]
+          - button [ref=e379] [cursor=pointer]:
+            - img [ref=e380]
+          - button [ref=e382] [cursor=pointer]:
+            - img [ref=e383]
+          - button [ref=e388] [cursor=pointer]:
+            - img [ref=e389]
+          - button [ref=e393] [cursor=pointer]:
+            - img [ref=e394]
+        - generic [ref=e88]: CS
+    - button [active] [ref=e98] [cursor=pointer]:
+      - img [ref=e399]
+    - main [ref=e102]:
+      - generic [ref=e105]:
+        - generic [ref=e109]:
+          - generic [ref=e110]: Unidade Puma
+          - heading "Portal Executivo" [level=2] [ref=e111]
+          - paragraph [ref=e112]: Panorama geral da implementacao Kaizen/TPM. Acompanhe indicadores, evolucao das equipes e identifique oportunidades de melhoria.
+        - generic [ref=e113]:
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - generic [ref=e118]: Total de Grupos
+              - img [ref=e120]
+            - generic [ref=e125]: "7"
+            - generic [ref=e126]:
+              - img [ref=e127]
+              - text: 12% vs. mês anterior
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - generic [ref=e133]: Nota Media
+              - img [ref=e135]
+            - generic [ref=e137]: 78%
+            - generic [ref=e138]:
+              - img [ref=e139]
+              - text: 5% vs. mês anterior
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - generic [ref=e145]: Taxa de Avanco
+              - img [ref=e147]
+            - generic [ref=e150]: 35%
+            - generic [ref=e151]:
+              - img [ref=e152]
+              - text: 8% vs. mês anterior
+          - generic [ref=e156]:
+            - generic [ref=e157]:
+              - generic [ref=e158]: Auditorias Pendentes
+              - img [ref=e160]
+            - generic [ref=e162]: "2"
+            - generic [ref=e163]:
+              - img [ref=e164]
+              - text: 3% vs. mês anterior
+        - generic [ref=e166]:
+          - generic [ref=e167]:
+            - generic [ref=e168]:
+              - heading "Evolucao das Notas" [level=3] [ref=e169]
+              - generic [ref=e170]: Ultimos 6 meses
+            - application [ref=e174]:
+              - generic [ref=e190]:
+                - generic [ref=e191]:
+                  - generic [ref=e193]: Out
+                  - generic [ref=e410]: Nov
+                  - generic [ref=e412]: Dez
+                  - generic [ref=e414]: Jan
+                  - generic [ref=e416]: Fev
+                  - generic [ref=e418]: Mar
+                - generic [ref=e204]:
+                  - generic [ref=e206]: "0"
+                  - generic [ref=e208]: "25"
+                  - generic [ref=e210]: "50"
+                  - generic [ref=e212]: "75"
+                  - generic [ref=e214]: "100"
+          - generic [ref=e215]:
+            - heading "Grupos por Tipo" [level=3] [ref=e217]
+            - generic [ref=e218]:
+              - application [ref=e222]
+              - generic [ref=e235]:
+                - generic [ref=e238]:
+                  - paragraph [ref=e239]: Operacional
+                  - paragraph [ref=e240]: 3 grupos
+                - generic [ref=e243]:
+                  - paragraph [ref=e244]: Administrativo
+                  - paragraph [ref=e245]: 2 grupos
+                - generic [ref=e248]:
+                  - paragraph [ref=e249]: 5S
+                  - paragraph [ref=e250]: 2 grupos
+        - generic [ref=e251]:
+          - generic [ref=e252]:
+            - generic [ref=e253]:
+              - heading "Proximos a Avancar" [level=3] [ref=e254]
+              - button "Ver todos" [ref=e255] [cursor=pointer]:
+                - text: Ver todos
+                - img [ref=e256]
+            - generic [ref=e258]:
+              - generic [ref=e259] [cursor=pointer]:
+                - generic [ref=e260]:
+                  - paragraph [ref=e261]: Equipe Alpha
+                  - paragraph [ref=e262]: Operacional — Linha de Montagem A
+                - generic [ref=e278]: 3/5
+                - generic [ref=e279]: 87%
+              - generic [ref=e280] [cursor=pointer]:
+                - generic [ref=e281]:
+                  - paragraph [ref=e282]: Equipe Beta
+                  - paragraph [ref=e283]: Operacional — Linha de Montagem B
+                - generic [ref=e299]: 2/5
+                - generic [ref=e300]: 72%
+              - generic [ref=e301] [cursor=pointer]:
+                - generic [ref=e302]:
+                  - paragraph [ref=e303]: Equipe Zeta
+                  - paragraph [ref=e304]: 5S — Laboratorio
+                - generic [ref=e317]: 2/4
+                - generic [ref=e318]: 78%
+              - generic [ref=e319] [cursor=pointer]:
+                - generic [ref=e320]:
+                  - paragraph [ref=e321]: Equipe Eta
+                  - paragraph [ref=e322]: Administrativo — Escritorio Central
+                - generic [ref=e332]: 2/3
+                - generic [ref=e333]: 82%
+          - generic [ref=e334]:
+            - generic [ref=e335]:
+              - heading "Auditorias Pendentes" [level=3] [ref=e336]
+              - generic [ref=e337]: Atencao
+            - generic [ref=e339]:
+              - generic [ref=e340] [cursor=pointer]:
+                - generic [ref=e341]:
+                  - paragraph [ref=e342]: Equipe Epsilon
+                  - paragraph [ref=e343]: Gerencia de Manutencao
+                - paragraph [ref=e345]: "Ultima: 14/01/2026"
+              - generic [ref=e346] [cursor=pointer]:
+                - generic [ref=e347]:
+                  - paragraph [ref=e348]: Equipe Gamma
+                  - paragraph [ref=e349]: Gerencia Administrativa
+                - paragraph [ref=e351]: "Ultima: 27/02/2026"
+              - generic [ref=e352] [cursor=pointer]:
+                - generic [ref=e353]:
+                  - paragraph [ref=e354]: Equipe Beta
+                  - paragraph [ref=e355]: Gerencia de Producao
+                - paragraph [ref=e357]: "Ultima: 04/03/2026"
+  - generic [ref=e358]: "0"

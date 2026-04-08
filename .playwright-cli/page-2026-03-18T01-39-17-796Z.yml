@@ -1,0 +1,168 @@
+- generic [ref=e1]:
+  - generic [ref=e42]:
+    - complementary [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - img [ref=e47]
+          - generic [ref=e51]:
+            - heading "Kaizen TPM" [level=1] [ref=e52]
+            - paragraph [ref=e53]: SUPERAR
+        - paragraph [ref=e55]: Menu
+        - navigation [ref=e56]:
+          - button "Dashboard" [ref=e57] [cursor=pointer]:
+            - img [ref=e59]
+            - generic [ref=e64]: Dashboard
+          - button "Grupos" [ref=e65] [cursor=pointer]:
+            - img [ref=e66]
+            - generic [ref=e71]: Grupos
+          - button "Historico" [active] [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+            - generic [ref=e76]: Historico
+          - button "Administracao" [ref=e78] [cursor=pointer]:
+            - paragraph [ref=e79]: Administracao
+            - img [ref=e81]
+        - generic [ref=e85]:
+          - generic [ref=e88]: CS
+          - generic [ref=e90]:
+            - paragraph [ref=e91]: Carlos
+            - button "Puma Trocar unidade" [ref=e92] [cursor=pointer]:
+              - img [ref=e93]
+              - generic [ref=e95]:
+                - paragraph [ref=e96]: Puma
+                - paragraph [ref=e97]: Trocar unidade
+    - button [ref=e98] [cursor=pointer]:
+      - img [ref=e99]
+    - main [ref=e102]:
+      - generic [ref=e669]:
+        - generic [ref=e673]:
+          - img [ref=e675]
+          - generic [ref=e678]:
+            - heading "Historico" [level=2] [ref=e679]
+            - paragraph [ref=e680]: Consulte o historico completo de auditorias e followups realizados.
+        - generic [ref=e681]:
+          - generic [ref=e682]:
+            - generic [ref=e684]:
+              - img [ref=e686]
+              - textbox "Buscar por grupo ou aplicador..." [ref=e688]
+            - combobox [ref=e689] [cursor=pointer]:
+              - option "Todos Tipos" [selected]
+              - option "Auditoria"
+              - option "Follow-up"
+          - generic [ref=e690]:
+            - combobox [ref=e691] [cursor=pointer]:
+              - option "Todos Grupos" [selected]
+              - option "Equipe Alpha"
+              - option "Equipe Beta"
+              - option "Equipe Gamma"
+              - option "Equipe Delta"
+              - option "Equipe Epsilon"
+              - option "Equipe Zeta"
+              - option "Equipe Eta"
+            - combobox [ref=e692] [cursor=pointer]:
+              - option "Todas Gerencias" [selected]
+              - option "Gerencia de Producao"
+              - option "Gerencia de Manutencao"
+              - option "Gerencia de Qualidade"
+              - option "Gerencia Administrativa"
+            - combobox [ref=e693] [cursor=pointer]:
+              - option "Todos Tipos Grupo" [selected]
+              - option "Operacional"
+              - option "Administrativo"
+              - option "5S"
+          - generic [ref=e694]:
+            - generic [ref=e695]:
+              - generic [ref=e696]: Data Inicial
+              - textbox [ref=e697] [cursor=pointer]
+            - generic [ref=e698]:
+              - generic [ref=e699]: Data Final
+              - textbox [ref=e700] [cursor=pointer]
+            - button "Limpar filtros" [ref=e701] [cursor=pointer]
+        - paragraph [ref=e703]: 5 avaliacoes encontradas
+        - table [ref=e707]:
+          - rowgroup [ref=e708]:
+            - row "Data Grupo Tipo Passo Nota Aplicador Avanco" [ref=e709]:
+              - columnheader "Data" [ref=e710]
+              - columnheader "Grupo" [ref=e711]
+              - columnheader "Tipo" [ref=e712]
+              - columnheader "Passo" [ref=e713]
+              - columnheader "Nota" [ref=e714]
+              - columnheader "Aplicador" [ref=e715]
+              - columnheader "Avanco" [ref=e716]
+              - columnheader [ref=e717]
+          - rowgroup [ref=e718]:
+            - row "14 de mar. Equipe Eta Escritorio Central Auditoria 2 82% Carlos Silva Nao" [ref=e719]:
+              - cell "14 de mar." [ref=e720]
+              - cell "Equipe Eta Escritorio Central" [ref=e721]:
+                - paragraph [ref=e722]: Equipe Eta
+                - paragraph [ref=e723]: Escritorio Central
+              - cell "Auditoria" [ref=e724]:
+                - generic [ref=e725]: Auditoria
+              - cell "2" [ref=e726]
+              - cell "82%" [ref=e727]:
+                - generic [ref=e728]: 82%
+              - cell "Carlos Silva" [ref=e729]
+              - cell "Nao" [ref=e730]
+              - cell [ref=e731]:
+                - button [ref=e732] [cursor=pointer]:
+                  - img [ref=e733]
+            - row "12 de mar. Equipe Delta Oficina Central Auditoria 4 93% Ana Oliveira Nao" [ref=e736]:
+              - cell "12 de mar." [ref=e737]
+              - cell "Equipe Delta Oficina Central" [ref=e738]:
+                - paragraph [ref=e739]: Equipe Delta
+                - paragraph [ref=e740]: Oficina Central
+              - cell "Auditoria" [ref=e741]:
+                - generic [ref=e742]: Auditoria
+              - cell "4" [ref=e743]
+              - cell "93%" [ref=e744]:
+                - generic [ref=e745]: 93%
+              - cell "Ana Oliveira" [ref=e746]
+              - cell "Nao" [ref=e747]
+              - cell [ref=e748]:
+                - button [ref=e749] [cursor=pointer]:
+                  - img [ref=e750]
+            - row "10 de mar. Equipe Alpha Linha de Montagem A Auditoria 3 87% Carlos Silva Nao" [ref=e753]:
+              - cell "10 de mar." [ref=e754]
+              - cell "Equipe Alpha Linha de Montagem A" [ref=e755]:
+                - paragraph [ref=e756]: Equipe Alpha
+                - paragraph [ref=e757]: Linha de Montagem A
+              - cell "Auditoria" [ref=e758]:
+                - generic [ref=e759]: Auditoria
+              - cell "3" [ref=e760]
+              - cell "87%" [ref=e761]:
+                - generic [ref=e762]: 87%
+              - cell "Carlos Silva" [ref=e763]
+              - cell "Nao" [ref=e764]
+              - cell [ref=e765]:
+                - button [ref=e766] [cursor=pointer]:
+                  - img [ref=e767]
+            - row "05 de mar. Equipe Beta Linha de Montagem B Auditoria 2 72% Carlos Silva Nao" [ref=e770]:
+              - cell "05 de mar." [ref=e771]
+              - cell "Equipe Beta Linha de Montagem B" [ref=e772]:
+                - paragraph [ref=e773]: Equipe Beta
+                - paragraph [ref=e774]: Linha de Montagem B
+              - cell "Auditoria" [ref=e775]:
+                - generic [ref=e776]: Auditoria
+              - cell "2" [ref=e777]
+              - cell "72%" [ref=e778]:
+                - generic [ref=e779]: 72%
+              - cell "Carlos Silva" [ref=e780]
+              - cell "Nao" [ref=e781]
+              - cell [ref=e782]:
+                - button [ref=e783] [cursor=pointer]:
+                  - img [ref=e784]
+            - row "01 de mar. Equipe Alpha Linha de Montagem A Follow-up 3 82% Ana Oliveira" [ref=e787]:
+              - cell "01 de mar." [ref=e788]
+              - cell "Equipe Alpha Linha de Montagem A" [ref=e789]:
+                - paragraph [ref=e790]: Equipe Alpha
+                - paragraph [ref=e791]: Linha de Montagem A
+              - cell "Follow-up" [ref=e792]:
+                - generic [ref=e793]: Follow-up
+              - cell "3" [ref=e794]
+              - cell "82%" [ref=e795]:
+                - generic [ref=e796]: 82%
+              - cell "Ana Oliveira" [ref=e797]
+              - cell [ref=e798]
+              - cell [ref=e799]:
+                - button [ref=e800] [cursor=pointer]:
+                  - img [ref=e801]
+  - generic [ref=e362]: "0"

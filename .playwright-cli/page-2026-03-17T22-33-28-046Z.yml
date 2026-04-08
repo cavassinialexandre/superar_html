@@ -1,0 +1,23 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - img [ref=e6]
+    - heading "Kaizen TPM" [level=1] [ref=e10]
+    - paragraph [ref=e11]: Superar — Sistema de Gestao
+  - generic [ref=e12]:
+    - button "Puma Unidade fabril Puma — Operacoes industriais e logistica integrada Acessar unidade" [ref=e13] [cursor=pointer]:
+      - generic [ref=e16]:
+        - img [ref=e18]
+        - heading "Puma" [level=2] [ref=e20]
+        - paragraph [ref=e21]: Unidade fabril Puma — Operacoes industriais e logistica integrada
+        - generic [ref=e22]:
+          - generic [ref=e23]: Acessar unidade
+          - img [ref=e24]
+    - button "Monte Alegre Unidade fabril Monte Alegre — Producao e manufatura avancada Acessar unidade" [ref=e27] [cursor=pointer]:
+      - generic [ref=e30]:
+        - img [ref=e32]
+        - heading "Monte Alegre" [level=2] [ref=e34]
+        - paragraph [ref=e35]: Unidade fabril Monte Alegre — Producao e manufatura avancada
+        - generic [ref=e36]:
+          - generic [ref=e37]: Acessar unidade
+          - img [ref=e38]
+  - paragraph [ref=e41]: Selecione a unidade fabril para iniciar

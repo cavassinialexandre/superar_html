@@ -1,0 +1,149 @@
+- generic [ref=e1]:
+  - generic [ref=e42]:
+    - complementary [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - img [ref=e47]
+          - generic [ref=e51]:
+            - heading "Kaizen TPM" [level=1] [ref=e52]
+            - paragraph [ref=e53]: SUPERAR
+        - button "Puma Trocar unidade" [ref=e55] [cursor=pointer]:
+          - img [ref=e56]
+          - generic [ref=e58]:
+            - paragraph [ref=e59]: Puma
+            - paragraph [ref=e60]: Trocar unidade
+        - paragraph [ref=e62]: Menu
+        - navigation [ref=e63]:
+          - button "Dashboard" [ref=e64] [cursor=pointer]:
+            - img [ref=e66]
+            - generic [ref=e71]: Dashboard
+          - button "Grupos" [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+            - generic [ref=e78]: Grupos
+          - button "Historico" [ref=e79] [cursor=pointer]:
+            - img [ref=e80]
+            - generic [ref=e83]: Historico
+          - button "Administracao" [ref=e85] [cursor=pointer]:
+            - paragraph [ref=e86]: Administracao
+            - img [ref=e88]
+          - generic [ref=e362]:
+            - button "Usuarios" [active] [ref=e363] [cursor=pointer]:
+              - img [ref=e364]
+              - generic [ref=e367]: Usuarios
+            - button "Gerencias" [ref=e368] [cursor=pointer]:
+              - img [ref=e369]
+              - generic [ref=e372]: Gerencias
+            - button "Areas" [ref=e373] [cursor=pointer]:
+              - img [ref=e374]
+              - generic [ref=e376]: Areas
+            - button "Tipos de Grupo" [ref=e377] [cursor=pointer]:
+              - img [ref=e378]
+              - generic [ref=e383]: Tipos de Grupo
+            - button "Checklists" [ref=e384] [cursor=pointer]:
+              - img [ref=e385]
+              - generic [ref=e389]: Checklists
+            - button "Grupos" [ref=e390] [cursor=pointer]:
+              - img [ref=e391]
+              - generic [ref=e396]: Grupos
+        - generic [ref=e92]:
+          - button "CS" [ref=e93] [cursor=pointer]:
+            - generic [ref=e95]: CS
+          - generic [ref=e97]:
+            - paragraph [ref=e98]: Carlos
+            - paragraph [ref=e99]: Puma
+            - button [ref=e100] [cursor=pointer]:
+              - img [ref=e101]
+    - main [ref=e104]:
+      - generic [ref=e408]:
+        - generic [ref=e409]:
+          - button "Usuarios" [ref=e410] [cursor=pointer]
+          - button "Gerencias" [ref=e411] [cursor=pointer]
+          - button "Areas" [ref=e412] [cursor=pointer]
+          - button "Tipos de Grupo" [ref=e413] [cursor=pointer]
+          - button "Checklists" [ref=e414] [cursor=pointer]
+          - button "Grupos" [ref=e415] [cursor=pointer]
+        - generic [ref=e417]:
+          - generic [ref=e418]:
+            - generic [ref=e420]:
+              - img [ref=e422]
+              - textbox "Buscar usuario..." [ref=e424]
+            - button "Novo" [ref=e425] [cursor=pointer]:
+              - img [ref=e426]
+              - text: Novo
+          - table [ref=e428]:
+            - rowgroup [ref=e429]:
+              - row "Nome Perfis" [ref=e430]:
+                - columnheader "Nome" [ref=e431]
+                - columnheader "Perfis" [ref=e432]
+                - columnheader [ref=e433]
+            - rowgroup [ref=e434]:
+              - row "CS Carlos Silva Admin Avaliador" [ref=e435]:
+                - cell "CS Carlos Silva" [ref=e436]:
+                  - generic [ref=e437]:
+                    - generic [ref=e438]: CS
+                    - generic [ref=e439]: Carlos Silva
+                - cell "Admin Avaliador" [ref=e440]:
+                  - generic [ref=e441]:
+                    - generic [ref=e442]: Admin
+                    - generic [ref=e443]: Avaliador
+                - cell [ref=e444]:
+                  - generic [ref=e445]:
+                    - button [ref=e446] [cursor=pointer]:
+                      - img [ref=e447]
+                    - button [ref=e450] [cursor=pointer]:
+                      - img [ref=e451]
+              - row "AO Ana Oliveira Avaliador" [ref=e454]:
+                - cell "AO Ana Oliveira" [ref=e455]:
+                  - generic [ref=e456]:
+                    - generic [ref=e457]: AO
+                    - generic [ref=e458]: Ana Oliveira
+                - cell "Avaliador" [ref=e459]:
+                  - generic [ref=e461]: Avaliador
+                - cell [ref=e462]:
+                  - generic [ref=e463]:
+                    - button [ref=e464] [cursor=pointer]:
+                      - img [ref=e465]
+                    - button [ref=e468] [cursor=pointer]:
+                      - img [ref=e469]
+              - row "PS Pedro Santos Usuario" [ref=e472]:
+                - cell "PS Pedro Santos" [ref=e473]:
+                  - generic [ref=e474]:
+                    - generic [ref=e475]: PS
+                    - generic [ref=e476]: Pedro Santos
+                - cell "Usuario" [ref=e477]:
+                  - generic [ref=e479]: Usuario
+                - cell [ref=e480]:
+                  - generic [ref=e481]:
+                    - button [ref=e482] [cursor=pointer]:
+                      - img [ref=e483]
+                    - button [ref=e486] [cursor=pointer]:
+                      - img [ref=e487]
+              - row "MC Maria Costa Admin" [ref=e490]:
+                - cell "MC Maria Costa" [ref=e491]:
+                  - generic [ref=e492]:
+                    - generic [ref=e493]: MC
+                    - generic [ref=e494]: Maria Costa
+                - cell "Admin" [ref=e495]:
+                  - generic [ref=e497]: Admin
+                - cell [ref=e498]:
+                  - generic [ref=e499]:
+                    - button [ref=e500] [cursor=pointer]:
+                      - img [ref=e501]
+                    - button [ref=e504] [cursor=pointer]:
+                      - img [ref=e505]
+              - row "JF Joao Ferreira Avaliador Usuario" [ref=e508]:
+                - cell "JF Joao Ferreira" [ref=e509]:
+                  - generic [ref=e510]:
+                    - generic [ref=e511]: JF
+                    - generic [ref=e512]: Joao Ferreira
+                - cell "Avaliador Usuario" [ref=e513]:
+                  - generic [ref=e514]:
+                    - generic [ref=e515]: Avaliador
+                    - generic [ref=e516]: Usuario
+                - cell [ref=e517]:
+                  - generic [ref=e518]:
+                    - button [ref=e519] [cursor=pointer]:
+                      - img [ref=e520]
+                    - button [ref=e523] [cursor=pointer]:
+                      - img [ref=e524]
+  - generic [ref=e360]: "0"

@@ -1,0 +1,193 @@
+- generic [ref=e1]:
+  - generic [ref=e42]:
+    - complementary [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - img [ref=e47]
+          - generic [ref=e51]:
+            - heading "Kaizen TPM" [level=1] [ref=e52]
+            - paragraph [ref=e53]: SUPERAR
+        - paragraph [ref=e55]: Menu
+        - navigation [ref=e56]:
+          - button "Dashboard" [ref=e57] [cursor=pointer]:
+            - img [ref=e59]
+            - generic [ref=e64]: Dashboard
+          - button "Grupos" [active] [ref=e65] [cursor=pointer]:
+            - img [ref=e66]
+            - generic [ref=e71]: Grupos
+          - button "Historico" [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+            - generic [ref=e76]: Historico
+          - button "Administracao" [ref=e78] [cursor=pointer]:
+            - paragraph [ref=e79]: Administracao
+            - img [ref=e81]
+        - generic [ref=e85]:
+          - generic [ref=e88]: CS
+          - generic [ref=e90]:
+            - paragraph [ref=e91]: Carlos
+            - button "Puma Trocar unidade" [ref=e92] [cursor=pointer]:
+              - img [ref=e93]
+              - generic [ref=e95]:
+                - paragraph [ref=e96]: Puma
+                - paragraph [ref=e97]: Trocar unidade
+    - button [ref=e98] [cursor=pointer]:
+      - img [ref=e99]
+    - main [ref=e102]:
+      - generic [ref=e365]:
+        - generic [ref=e366]:
+          - navigation [ref=e367]:
+            - generic [ref=e369]: Grupos
+          - heading "Grupos" [level=1] [ref=e370]
+          - paragraph [ref=e371]: Visualize e gerencie todos os grupos Kaizen/TPM da unidade.
+        - generic [ref=e372]:
+          - generic [ref=e374]:
+            - img [ref=e376]
+            - textbox "Buscar grupo..." [ref=e378]
+          - combobox [ref=e379] [cursor=pointer]:
+            - option "Todas Gerencias" [selected]
+            - option "Gerencia de Producao"
+            - option "Gerencia de Manutencao"
+            - option "Gerencia de Qualidade"
+            - option "Gerencia Administrativa"
+          - combobox [ref=e380] [cursor=pointer]:
+            - option "Todas Areas" [selected]
+            - option "Linha de Montagem A"
+            - option "Linha de Montagem B"
+            - option "Oficina Central"
+            - option "Laboratorio"
+            - option "Escritorio Central"
+            - option "Almoxarifado"
+          - combobox [ref=e381] [cursor=pointer]:
+            - option "Todos Tipos" [selected]
+            - option "Operacional"
+            - option "Administrativo"
+            - option "5S"
+        - paragraph [ref=e383]: 7 grupos encontrados
+        - generic [ref=e384]:
+          - generic [ref=e386] [cursor=pointer]:
+            - generic [ref=e387]:
+              - generic [ref=e388]:
+                - heading "Equipe Alpha" [level=3] [ref=e389]
+                - paragraph [ref=e390]: Gerencia de Producao — Linha de Montagem A
+              - generic [ref=e391]: Operacional
+            - generic [ref=e392]:
+              - generic [ref=e408]: 3/5
+              - generic [ref=e409]: 87%
+            - generic [ref=e410]:
+              - generic [ref=e411]: "Ultima: 09/03/2026"
+              - generic [ref=e412]:
+                - button "Aplicar Auditoria" [ref=e413]:
+                  - img [ref=e414]
+                - button "Aplicar Follow-up" [ref=e418]:
+                  - img [ref=e419]
+                - button "Ver Historico" [ref=e422]:
+                  - img [ref=e423]
+          - generic [ref=e427] [cursor=pointer]:
+            - generic [ref=e428]:
+              - generic [ref=e429]:
+                - heading "Equipe Beta" [level=3] [ref=e430]
+                - paragraph [ref=e431]: Gerencia de Producao — Linha de Montagem B
+              - generic [ref=e432]: Operacional
+            - generic [ref=e433]:
+              - generic [ref=e449]: 2/5
+              - generic [ref=e450]: 72%
+            - generic [ref=e451]:
+              - generic [ref=e452]: "Ultima: 04/03/2026"
+              - generic [ref=e453]:
+                - button "Aplicar Auditoria" [ref=e454]:
+                  - img [ref=e455]
+                - button "Aplicar Follow-up" [ref=e459]:
+                  - img [ref=e460]
+                - button "Ver Historico" [ref=e463]:
+                  - img [ref=e464]
+          - generic [ref=e468] [cursor=pointer]:
+            - generic [ref=e469]:
+              - generic [ref=e470]:
+                - heading "Equipe Gamma" [level=3] [ref=e471]
+                - paragraph [ref=e472]: Gerencia Administrativa — Escritorio Central
+              - generic [ref=e473]: Administrativo
+            - generic [ref=e474]:
+              - generic [ref=e484]: 1/3
+              - generic [ref=e485]: 65%
+            - generic [ref=e486]:
+              - generic [ref=e487]: "Ultima: 27/02/2026"
+              - generic [ref=e488]:
+                - button "Aplicar Auditoria" [ref=e489]:
+                  - img [ref=e490]
+                - button "Aplicar Follow-up" [ref=e494]:
+                  - img [ref=e495]
+                - button "Ver Historico" [ref=e498]:
+                  - img [ref=e499]
+          - generic [ref=e503] [cursor=pointer]:
+            - generic [ref=e504]:
+              - generic [ref=e505]:
+                - heading "Equipe Delta" [level=3] [ref=e506]
+                - paragraph [ref=e507]: Gerencia de Manutencao — Oficina Central
+              - generic [ref=e508]: 5S
+            - generic [ref=e509]:
+              - generic [ref=e522]: 4/4
+              - generic [ref=e523]: 93%
+            - generic [ref=e524]:
+              - generic [ref=e525]: "Ultima: 11/03/2026"
+              - generic [ref=e526]:
+                - button "Aplicar Auditoria" [ref=e527]:
+                  - img [ref=e528]
+                - button "Aplicar Follow-up" [ref=e532]:
+                  - img [ref=e533]
+                - button "Ver Historico" [ref=e536]:
+                  - img [ref=e537]
+          - generic [ref=e541] [cursor=pointer]:
+            - generic [ref=e542]:
+              - generic [ref=e543]:
+                - heading "Equipe Epsilon" [level=3] [ref=e544]
+                - paragraph [ref=e545]: Gerencia de Manutencao — Almoxarifado
+              - generic [ref=e546]: Operacional
+            - generic [ref=e547]:
+              - generic [ref=e560]: 1/4
+              - generic [ref=e561]: 45%
+            - generic [ref=e562]:
+              - generic [ref=e563]: "Ultima: 14/01/2026"
+              - generic [ref=e564]:
+                - button "Aplicar Auditoria" [ref=e565]:
+                  - img [ref=e566]
+                - button "Aplicar Follow-up" [ref=e570]:
+                  - img [ref=e571]
+                - button "Ver Historico" [ref=e574]:
+                  - img [ref=e575]
+          - generic [ref=e579] [cursor=pointer]:
+            - generic [ref=e580]:
+              - generic [ref=e581]:
+                - heading "Equipe Zeta" [level=3] [ref=e582]
+                - paragraph [ref=e583]: Gerencia de Qualidade — Laboratorio
+              - generic [ref=e584]: 5S
+            - generic [ref=e585]:
+              - generic [ref=e598]: 2/4
+              - generic [ref=e599]: 78%
+            - generic [ref=e600]:
+              - generic [ref=e601]: "Ultima: 07/03/2026"
+              - generic [ref=e602]:
+                - button "Aplicar Auditoria" [ref=e603]:
+                  - img [ref=e604]
+                - button "Aplicar Follow-up" [ref=e608]:
+                  - img [ref=e609]
+                - button "Ver Historico" [ref=e612]:
+                  - img [ref=e613]
+          - generic [ref=e617] [cursor=pointer]:
+            - generic [ref=e618]:
+              - generic [ref=e619]:
+                - heading "Equipe Eta" [level=3] [ref=e620]
+                - paragraph [ref=e621]: Gerencia Administrativa — Escritorio Central
+              - generic [ref=e622]: Administrativo
+            - generic [ref=e623]:
+              - generic [ref=e633]: 2/3
+              - generic [ref=e634]: 82%
+            - generic [ref=e635]:
+              - generic [ref=e636]: "Ultima: 13/03/2026"
+              - generic [ref=e637]:
+                - button "Aplicar Auditoria" [ref=e638]:
+                  - img [ref=e639]
+                - button "Aplicar Follow-up" [ref=e643]:
+                  - img [ref=e644]
+                - button "Ver Historico" [ref=e647]:
+                  - img [ref=e648]
+  - generic [ref=e362]: "0"
