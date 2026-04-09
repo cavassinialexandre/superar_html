@@ -8,7 +8,9 @@
 
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/cn'
-import { EvalQuestionCard } from './eval-question-card'
+import { EvalQuestionCardI } from './eval-question-card-i'
+import { EvalQuestionCardJ } from './eval-question-card-j'
+import { EvalQuestionCardK } from './eval-question-card-k'
 import {
   evalSectionStagger,
   evalQuestionItem,
@@ -240,7 +242,7 @@ function VariantI({
                       const globalIndex = allQuestions.indexOf(question)
                       return (
                         <motion.div key={question.id} variants={evalQuestionItem}>
-                          <EvalQuestionCard
+                          <EvalQuestionCardI
                             question={question}
                             index={globalIndex}
                             state={answers[question.id]}
@@ -365,7 +367,7 @@ function VariantJ({
                     const globalIndex = allQuestions.indexOf(question)
                     return (
                       <motion.div key={question.id} variants={evalQuestionItem}>
-                        <EvalQuestionCard
+                        <EvalQuestionCardJ
                           question={question}
                           index={globalIndex}
                           state={answers[question.id]}
@@ -401,7 +403,7 @@ function VariantJ({
                           const globalIndex = allQuestions.indexOf(question)
                           return (
                             <motion.div key={question.id} variants={evalQuestionItem}>
-                              <EvalQuestionCard
+                              <EvalQuestionCardJ
                                 question={question}
                                 index={globalIndex}
                                 state={answers[question.id]}
@@ -473,7 +475,7 @@ function VariantJ({
                           const globalIndex = allQuestions.indexOf(question)
                           return (
                             <motion.div key={question.id} variants={evalQuestionItem}>
-                              <EvalQuestionCard
+                              <EvalQuestionCardJ
                                 question={question}
                                 index={globalIndex}
                                 state={answers[question.id]}
@@ -620,7 +622,7 @@ function VariantK({
                   const globalIndex = allQuestions.indexOf(question)
                   return (
                     <motion.div key={question.id} variants={evalQuestionItem}>
-                      <EvalQuestionCard
+                      <EvalQuestionCardK
                         question={question}
                         index={globalIndex}
                         state={answers[question.id]}

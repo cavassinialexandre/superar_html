@@ -11,7 +11,11 @@
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/cn'
 import { ColoredDiamondPattern, WideDiamondPattern } from './eval-watermarks'
-import { EvalQuestionCard } from './eval-question-card'
+import { EvalQuestionCardA } from './eval-question-card-a'
+import { EvalQuestionCardB } from './eval-question-card-b'
+import { EvalQuestionCardC } from './eval-question-card-c'
+import { EvalQuestionCardD } from './eval-question-card-d'
+import { EvalQuestionCardE } from './eval-question-card-e'
 import {
   evalStaggerContainer,
   staggerItem,
@@ -190,52 +194,7 @@ function getSectionIcon(icon: string, color = 'currentColor') {
 // Shared: Question list renderer
 // ---------------------------------------------------------------------------
 
-function QuestionList({
-  questions,
-  allQuestions,
-  answers,
-  sectionColor,
-  onAnswer,
-  onJustification,
-  onAddAttachments,
-  onRemoveAttachment,
-}: {
-  questions: Question[]
-  allQuestions: Question[]
-  answers: Record<string, QuestionState>
-  sectionColor: string
-  onAnswer: (questionId: string, value: AnswerValue) => void
-  onJustification: (questionId: string, text: string) => void
-  onAddAttachments: (questionId: string, files: File[]) => void
-  onRemoveAttachment: (questionId: string, index: number) => void
-}) {
-  return (
-    <motion.div
-      variants={evalSectionStagger}
-      initial="initial"
-      animate="animate"
-      className="space-y-3"
-    >
-      {questions.map((question) => {
-        const globalIndex = allQuestions.indexOf(question)
-        return (
-          <motion.div key={question.id} variants={evalQuestionItem}>
-            <EvalQuestionCard
-              question={question}
-              index={globalIndex}
-              state={answers[question.id]}
-              sectionColor={sectionColor}
-              onAnswer={(v) => onAnswer(question.id, v)}
-              onJustification={(t) => onJustification(question.id, t)}
-              onAddAttachments={(f) => onAddAttachments(question.id, f)}
-              onRemoveAttachment={(i) => onRemoveAttachment(question.id, i)}
-            />
-          </motion.div>
-        )
-      })}
-    </motion.div>
-  )
-}
+// QuestionList removed — each variant now renders its own card component inline
 
 // ---------------------------------------------------------------------------
 // Shared helpers
@@ -326,16 +285,25 @@ function VariantA({
 
           {/* Questions */}
           <div className="px-4 pb-4">
-            <QuestionList
-              questions={questions}
-              allQuestions={allQuestions}
-              answers={answers}
-              sectionColor={color}
-              onAnswer={onAnswer}
-              onJustification={onJustification}
-              onAddAttachments={onAddAttachments}
-              onRemoveAttachment={onRemoveAttachment}
-            />
+            <motion.div variants={evalSectionStagger} initial="initial" animate="animate" className="space-y-3">
+              {questions.map((question) => {
+                const globalIndex = allQuestions.indexOf(question)
+                return (
+                  <motion.div key={question.id} variants={evalQuestionItem}>
+                    <EvalQuestionCardA
+                      question={question}
+                      index={globalIndex}
+                      state={answers[question.id]}
+                      sectionColor={color}
+                      onAnswer={(v) => onAnswer(question.id, v)}
+                      onJustification={(t) => onJustification(question.id, t)}
+                      onAddAttachments={(f) => onAddAttachments(question.id, f)}
+                      onRemoveAttachment={(i) => onRemoveAttachment(question.id, i)}
+                    />
+                  </motion.div>
+                )
+              })}
+            </motion.div>
           </div>
         </div>
       </div>
@@ -402,16 +370,25 @@ function VariantB({
         className="bg-white rounded-b-2xl border border-t-0 border-gray-200 p-4 pl-5"
         style={{ borderLeft: `3px solid ${color}` }}
       >
-        <QuestionList
-          questions={questions}
-          allQuestions={allQuestions}
-          answers={answers}
-          sectionColor={color}
-          onAnswer={onAnswer}
-          onJustification={onJustification}
-          onAddAttachments={onAddAttachments}
-          onRemoveAttachment={onRemoveAttachment}
-        />
+        <motion.div variants={evalSectionStagger} initial="initial" animate="animate" className="space-y-3">
+          {questions.map((question) => {
+            const globalIndex = allQuestions.indexOf(question)
+            return (
+              <motion.div key={question.id} variants={evalQuestionItem}>
+                <EvalQuestionCardB
+                  question={question}
+                  index={globalIndex}
+                  state={answers[question.id]}
+                  sectionColor={color}
+                  onAnswer={(v) => onAnswer(question.id, v)}
+                  onJustification={(t) => onJustification(question.id, t)}
+                  onAddAttachments={(f) => onAddAttachments(question.id, f)}
+                  onRemoveAttachment={(i) => onRemoveAttachment(question.id, i)}
+                />
+              </motion.div>
+            )
+          })}
+        </motion.div>
       </div>
     </motion.div>
   )
@@ -505,16 +482,25 @@ function VariantC({
         className="px-4 pb-4"
         style={{ background: `linear-gradient(to bottom, ${colorLight}05, transparent)` }}
       >
-        <QuestionList
-          questions={questions}
-          allQuestions={allQuestions}
-          answers={answers}
-          sectionColor={color}
-          onAnswer={onAnswer}
-          onJustification={onJustification}
-          onAddAttachments={onAddAttachments}
-          onRemoveAttachment={onRemoveAttachment}
-        />
+        <motion.div variants={evalSectionStagger} initial="initial" animate="animate" className="space-y-3">
+          {questions.map((question) => {
+            const globalIndex = allQuestions.indexOf(question)
+            return (
+              <motion.div key={question.id} variants={evalQuestionItem}>
+                <EvalQuestionCardC
+                  question={question}
+                  index={globalIndex}
+                  state={answers[question.id]}
+                  sectionColor={color}
+                  onAnswer={(v) => onAnswer(question.id, v)}
+                  onJustification={(t) => onJustification(question.id, t)}
+                  onAddAttachments={(f) => onAddAttachments(question.id, f)}
+                  onRemoveAttachment={(i) => onRemoveAttachment(question.id, i)}
+                />
+              </motion.div>
+            )
+          })}
+        </motion.div>
       </div>
     </motion.div>
   )
@@ -608,16 +594,25 @@ function VariantD({
 
       {/* Body — slightly inset */}
       <div className="bg-white p-4 pl-5">
-        <QuestionList
-          questions={questions}
-          allQuestions={allQuestions}
-          answers={answers}
-          sectionColor={color}
-          onAnswer={onAnswer}
-          onJustification={onJustification}
-          onAddAttachments={onAddAttachments}
-          onRemoveAttachment={onRemoveAttachment}
-        />
+        <motion.div variants={evalSectionStagger} initial="initial" animate="animate" className="space-y-3">
+          {questions.map((question) => {
+            const globalIndex = allQuestions.indexOf(question)
+            return (
+              <motion.div key={question.id} variants={evalQuestionItem}>
+                <EvalQuestionCardD
+                  question={question}
+                  index={globalIndex}
+                  state={answers[question.id]}
+                  sectionColor={color}
+                  onAnswer={(v) => onAnswer(question.id, v)}
+                  onJustification={(t) => onJustification(question.id, t)}
+                  onAddAttachments={(f) => onAddAttachments(question.id, f)}
+                  onRemoveAttachment={(i) => onRemoveAttachment(question.id, i)}
+                />
+              </motion.div>
+            )
+          })}
+        </motion.div>
       </div>
     </motion.div>
   )
@@ -715,7 +710,7 @@ function VariantE({
                   className="absolute -left-[15px] top-[17px] w-[6px] h-[6px] rounded-full border-2 bg-white"
                   style={{ borderColor: color }}
                 />
-                <EvalQuestionCard
+                <EvalQuestionCardE
                   question={question}
                   index={globalIndex}
                   state={answers[question.id]}

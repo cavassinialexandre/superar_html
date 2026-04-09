@@ -9,7 +9,9 @@
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/cn'
 import { WideDiamondPattern } from './eval-watermarks'
-import { EvalQuestionCard } from './eval-question-card'
+import { EvalQuestionCardF } from './eval-question-card-f'
+import { EvalQuestionCardG } from './eval-question-card-g'
+import { EvalQuestionCardH1 } from './eval-question-card-h1'
 import {
   evalStaggerContainer,
   staggerItem,
@@ -46,6 +48,7 @@ interface EvalSectionBandProps {
   answers: Record<string, QuestionState>
   onAnswer: (questionId: string, value: AnswerValue) => void
   onJustification: (questionId: string, text: string) => void
+  onComment?: (questionId: string, text: string) => void
   onAddAttachments: (questionId: string, files: File[]) => void
   onRemoveAttachment: (questionId: string, index: number) => void
   sectionRefs: React.RefObject<HTMLDivElement | null>[]
@@ -280,7 +283,7 @@ function VariantF({
                     backgroundColor: isEven ? `${section.colorLight}05` : 'transparent',
                   }}
                 >
-                  <EvalQuestionCard
+                  <EvalQuestionCardF
                     question={question}
                     index={globalIndex}
                     state={answers[question.id]}
@@ -384,7 +387,7 @@ function VariantG({
             const globalIndex = allQuestions.indexOf(question)
             return (
               <motion.div key={question.id} variants={evalQuestionItem}>
-                <EvalQuestionCard
+                <EvalQuestionCardG
                   question={question}
                   index={globalIndex}
                   state={answers[question.id]}
@@ -414,6 +417,7 @@ function VariantH({
   sectionRef,
   onAnswer,
   onJustification,
+  onComment,
   onAddAttachments,
   onRemoveAttachment,
 }: {
@@ -423,6 +427,7 @@ function VariantH({
   sectionRef: React.RefObject<HTMLDivElement | null>
   onAnswer: (questionId: string, value: AnswerValue) => void
   onJustification: (questionId: string, text: string) => void
+  onComment?: (questionId: string, text: string) => void
   onAddAttachments: (questionId: string, files: File[]) => void
   onRemoveAttachment: (questionId: string, index: number) => void
 }) {
@@ -467,50 +472,38 @@ function VariantH({
         </div>
       </div>
 
-      {/* Gap between floating elements */}
-      <div className="h-2" />
+      {/* Gap between floating band and cards */}
+      <div className="h-3" />
 
-      {/* Floating Body */}
-      <div
-        className="mx-1 rounded-xl border border-gray-200 bg-white p-4"
-        style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}
+      {/* Question cards float freely — no wrapper card */}
+      <motion.div
+        variants={evalSectionStagger}
+        initial="initial"
+        animate="animate"
+        className="space-y-3 mx-1"
       >
-        <motion.div
-          variants={evalSectionStagger}
-          initial="initial"
-          animate="animate"
-          className="space-y-3"
-        >
-          {section.questions.map((question) => {
-            const globalIndex = allQuestions.indexOf(question)
-            return (
-              <motion.div
-                key={question.id}
-                variants={evalQuestionItem}
-                className="flex items-start gap-2"
-              >
-                {/* Color dot indicator */}
-                <div
-                  className="w-2 h-2 rounded-full flex-shrink-0 mt-5"
-                  style={{ backgroundColor: section.color }}
-                />
-                <div className="flex-1 min-w-0">
-                  <EvalQuestionCard
-                    question={question}
-                    index={globalIndex}
-                    state={answers[question.id]}
-                    sectionColor={section.color}
-                    onAnswer={(v) => onAnswer(question.id, v)}
-                    onJustification={(t) => onJustification(question.id, t)}
-                    onAddAttachments={(f) => onAddAttachments(question.id, f)}
-                    onRemoveAttachment={(i) => onRemoveAttachment(question.id, i)}
-                  />
-                </div>
-              </motion.div>
-            )
-          })}
-        </motion.div>
-      </div>
+        {section.questions.map((question) => {
+          const globalIndex = allQuestions.indexOf(question)
+          const cardProps = {
+            question,
+            index: globalIndex,
+            state: answers[question.id],
+            sectionColor: section.color,
+            sectionColorDark: section.colorDark,
+            sectionColorLight: section.colorLight,
+            onAnswer: (v: AnswerValue) => onAnswer(question.id, v),
+            onJustification: (t: string) => onJustification(question.id, t),
+            onComment: (t: string) => onComment?.(question.id, t),
+            onAddAttachments: (f: File[]) => onAddAttachments(question.id, f),
+            onRemoveAttachment: (i: number) => onRemoveAttachment(question.id, i),
+          }
+          return (
+            <motion.div key={question.id} variants={evalQuestionItem}>
+              <EvalQuestionCardH1 {...cardProps} />
+            </motion.div>
+          )
+        })}
+      </motion.div>
     </motion.div>
   )
 }
@@ -526,6 +519,7 @@ export function EvalSectionBand({
   answers,
   onAnswer,
   onJustification,
+  onComment,
   onAddAttachments,
   onRemoveAttachment,
   sectionRefs,
@@ -535,6 +529,7 @@ export function EvalSectionBand({
     answers,
     onAnswer,
     onJustification,
+    onComment,
     onAddAttachments,
     onRemoveAttachment,
   }

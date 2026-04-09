@@ -9,6 +9,7 @@ import type { AnswerValue, Question } from '@/types'
 export interface QuestionState {
   answer: AnswerValue | null
   justification: string
+  comment: string
   attachments: File[]
 }
 
@@ -29,6 +30,9 @@ export function useEvaluationState() {
   const [advanceDecision, setAdvanceDecision] = useState<'advance' | 'maintain' | null>(null)
   const [presentMembers, setPresentMembers] = useState<string[]>([])
   const [otherPeople, setOtherPeople] = useState('')
+  const [evaluationDate, setEvaluationDate] = useState(
+    () => new Date().toISOString().split('T')[0],
+  )
 
   // Pega a revisão ativa do checklist (ou a primeira revisão disponível)
   const activeRevision = checklist?.revisions?.find(r => r.status === 'active') || checklist?.revisions?.[0]
@@ -65,6 +69,7 @@ export function useEvaluationState() {
       [questionId]: {
         answer,
         justification: prev[questionId]?.justification || '',
+        comment: prev[questionId]?.comment || '',
         attachments: prev[questionId]?.attachments || [],
       },
     }))
@@ -77,6 +82,20 @@ export function useEvaluationState() {
         ...prev[questionId],
         answer: prev[questionId]?.answer || null,
         justification,
+        comment: prev[questionId]?.comment || '',
+        attachments: prev[questionId]?.attachments || [],
+      },
+    }))
+  }, [])
+
+  const setComment = useCallback((questionId: string, comment: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [questionId]: {
+        ...prev[questionId],
+        answer: prev[questionId]?.answer || null,
+        justification: prev[questionId]?.justification || '',
+        comment,
         attachments: prev[questionId]?.attachments || [],
       },
     }))
@@ -89,6 +108,7 @@ export function useEvaluationState() {
         ...prev[questionId],
         answer: prev[questionId]?.answer || null,
         justification: prev[questionId]?.justification || '',
+        comment: prev[questionId]?.comment || '',
         attachments: [...(prev[questionId]?.attachments || []), ...files],
       },
     }))
@@ -142,6 +162,7 @@ export function useEvaluationState() {
     answers,
     presentMembers,
     otherPeople,
+    evaluationDate,
     showResult,
     showAdvanceDialog,
     advanceDecision,
@@ -158,10 +179,12 @@ export function useEvaluationState() {
     // Actions
     setAnswer,
     setJustification,
+    setComment,
     addAttachments,
     removeAttachment,
     toggleMember,
     setOtherPeople,
+    setEvaluationDate,
     handleFinalize,
     handleAdvanceDecision,
     setShowResult,

@@ -134,19 +134,7 @@ export function EvalAttendancePanel({
         Equipe Presente
       </p>
 
-      {/* Avatar grid */}
-      <div className="flex flex-wrap gap-2 items-center">
-        {members.map((member) => (
-          <MemberAvatar
-            key={member.id}
-            member={member}
-            isPresent={presentMembers.includes(member.name)}
-            onToggle={() => onToggleMember(member.name)}
-          />
-        ))}
-      </div>
-
-      {/* Summary bar */}
+      {/* Summary bar — right below title */}
       <div className="flex items-center gap-3 text-xs text-gray-400">
         {presentCount > 0 && (
           <span className="w-2 h-2 rounded-full bg-green-400 flex-shrink-0" />
@@ -169,19 +157,33 @@ export function EvalAttendancePanel({
         </button>
       </div>
 
-      {/* Toggle details */}
-      <button
-        onClick={() => setShowDetails(!showDetails)}
-        className="inline-flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
-      >
-        <motion.div
-          animate={{ rotate: showDetails ? 180 : 0 }}
-          transition={{ duration: 0.2 }}
+      {/* Avatar grid */}
+      <div className="flex flex-wrap gap-2 items-center">
+        {members.map((member) => (
+          <MemberAvatar
+            key={member.id}
+            member={member}
+            isPresent={presentMembers.includes(member.name)}
+            onToggle={() => onToggleMember(member.name)}
+          />
+        ))}
+      </div>
+
+      {/* Toggle details — centered */}
+      <div className="text-center">
+        <button
+          onClick={() => setShowDetails(!showDetails)}
+          className="inline-flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
         >
-          <ChevronDownIcon size={12} />
-        </motion.div>
-        {showDetails ? 'Ocultar detalhes' : 'Ver detalhes'}
-      </button>
+          <motion.div
+            animate={{ rotate: showDetails ? 180 : 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <ChevronDownIcon size={12} />
+          </motion.div>
+          {showDetails ? 'Ocultar detalhes' : 'Ver detalhes'}
+        </button>
+      </div>
 
       {/* Expandable detail panel */}
       <AnimatePresence>
@@ -241,10 +243,7 @@ export function EvalAttendancePanel({
         )}
       </AnimatePresence>
 
-      {/* Gradient divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
-
-      {/* Other people input */}
+      {/* Other people input — no divider */}
       <div>
         <Label>Outras pessoas (não cadastradas)</Label>
         <Input
