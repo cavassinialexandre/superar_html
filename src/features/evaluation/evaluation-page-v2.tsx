@@ -21,6 +21,7 @@ import {
   EvalMobileBar,
 } from './components'
 import { EvalSectionBand } from './components/eval-section-band'
+import { EvalHeroVariants } from './components/eval-hero-variants'
 import type { SectionDef } from './components'
 
 // ---------------------------------------------------------------------------
@@ -82,6 +83,7 @@ export function EvaluationPageV2() {
     totalQuestions,
     progress,
     score,
+    pointsBreakdown,
     meta,
     eligibility,
     canFinalize,
@@ -197,15 +199,14 @@ export function EvaluationPageV2() {
             { label: group.name, href: `/groups/${group.id}` },
             { label: evalType === 'audit' ? 'Auditoria' : 'Follow-up' },
           ]}
-          title={evalType === 'audit' ? 'Auditoria' : 'Follow-up'}
-          description={group.name}
         />
 
         {/* ================================================================
-            1. PREMIUM HERO SECTION
+            1. PREMIUM HERO SECTION (D8 fixed)
         ================================================================ */}
         <motion.div variants={staggerItem}>
-          <EvalHeroSection
+          <EvalHeroVariants
+            variant="D8"
             group={group}
             evalType={evalType as 'audit' | 'followup'}
             userName={userName}
@@ -216,6 +217,9 @@ export function EvaluationPageV2() {
             presentMembers={presentMembers}
             otherPeople={otherPeople}
             evaluationDate={evaluationDate}
+            sections={sectionNavItems}
+            eligibility={eligibility}
+            pointsBreakdown={pointsBreakdown}
             onToggleMember={toggleMember}
             onSetOtherPeople={setOtherPeople}
             onSetEvaluationDate={setEvaluationDate}

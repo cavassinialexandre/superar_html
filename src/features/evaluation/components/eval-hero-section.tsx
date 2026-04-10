@@ -94,7 +94,7 @@ function PillStepProgress({ current, max }: { current: number; max: number }) {
           </motion.div>
         )
       })}
-      <span className="ml-2 text-xs font-medium text-gray-400">Passo {current}/{max}</span>
+      <span className="ml-2 text-xs font-medium text-gray-400">Sequencia {current}/{max}</span>
     </div>
   )
 }

@@ -54,6 +54,30 @@ export function useEvaluationState() {
     return totalWeight > 0 ? (earnedWeight / totalWeight) * 100 : 0
   }, [answers, questions])
 
+  // Points breakdown — different from `score`:
+  // max starts with sum of ALL weights, NA removes from max,
+  // unanswered counts toward max but not earned
+  const pointsBreakdown = useMemo(() => {
+    let max = 0
+    let earned = 0
+    questions.forEach((q: Question) => {
+      const a = answers[q.id]?.answer
+      if (a === 'na') {
+        // NA reduces max — skip entirely
+        return
+      }
+      max += q.weight
+      if (a === 'yes') earned += q.weight
+      if (a === 'partial') earned += q.weight * 0.5
+      // 'no' or unanswered: earned += 0
+    })
+    return {
+      earned,
+      max,
+      percentage: max > 0 ? (earned / max) * 100 : 0,
+    }
+  }, [answers, questions])
+
   const meta = group ? getMetaForSequence(group.groupTypeId, group.currentSequence, groupTypes) : 80
 
   const eligibility = useMemo(() => {
@@ -172,6 +196,7 @@ export function useEvaluationState() {
     totalQuestions,
     progress,
     score,
+    pointsBreakdown,
     meta,
     eligibility,
     canFinalize,
