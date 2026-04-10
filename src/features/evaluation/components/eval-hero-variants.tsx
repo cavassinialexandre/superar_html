@@ -224,49 +224,106 @@ function ScoreRing({
 }
 
 // ===========================================================================
-// 3.5. InlineDiamondWatermark — reusable diamond grid SVG pattern
+// 3.5. InlineDiamondWatermark — randomized diamond grid (matches groups hero)
 // ===========================================================================
 
 function InlineDiamondWatermark({
-  rows = 6,
-  cols = 30,
-  spacing = 28,
-  diamondSize = 6,
-  opacity = 0.03,
+  spacing = 22,
+  diamondSize = 5,
+  opacityBase = 0.04,
+  opacityVariance = 0.025,
   color = 'white',
+  viewBoxWidth = 900,
+  viewBoxHeight = 280,
 }: {
-  rows?: number
-  cols?: number
   spacing?: number
   diamondSize?: number
-  opacity?: number
+  opacityBase?: number
+  opacityVariance?: number
   color?: string
+  viewBoxWidth?: number
+  viewBoxHeight?: number
 }) {
+  const diamonds: { x: number; y: number; opacity: number }[] = []
+  const cols = Math.ceil(viewBoxWidth / spacing) + 2
+  const rows = Math.ceil(viewBoxHeight / spacing) + 2
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      const offset = row % 2 === 0 ? 0 : spacing / 2
+      diamonds.push({
+        x: col * spacing + offset,
+        y: row * spacing,
+        opacity: opacityBase + Math.random() * opacityVariance,
+      })
+    }
+  }
+
   return (
-    <div
-      className="absolute inset-0 pointer-events-none"
-      style={{ opacity }}
+    <svg
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
+      preserveAspectRatio="xMidYMid slice"
+      fill="none"
     >
-      <svg width="100%" height="100%">
-        {Array.from({ length: rows }, (_, row) =>
-          Array.from({ length: cols }, (_, col) => {
-            const x = col * spacing + (row % 2 === 1 ? spacing / 2 : 0)
-            const y = row * spacing
-            return (
-              <rect
-                key={`${row}-${col}`}
-                x={x - diamondSize / 2}
-                y={y - diamondSize / 2}
-                width={diamondSize}
-                height={diamondSize}
-                fill={color}
-                transform={`rotate(45 ${x} ${y})`}
-              />
-            )
-          }),
-        )}
-      </svg>
-    </div>
+      {diamonds.map((d, i) => (
+        <rect
+          key={i}
+          x={d.x - diamondSize / 2}
+          y={d.y - diamondSize / 2}
+          width={diamondSize}
+          height={diamondSize}
+          transform={`rotate(45 ${d.x} ${d.y})`}
+          fill={color}
+          opacity={d.opacity}
+        />
+      ))}
+    </svg>
+  )
+}
+
+// ===========================================================================
+// 3.6. InlineWaveWatermark — wave for dark backgrounds (white strokes)
+// ===========================================================================
+
+function InlineWaveWatermark() {
+  return (
+    <svg
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      viewBox="0 0 900 400"
+      preserveAspectRatio="xMidYMid slice"
+      fill="none"
+    >
+      <defs>
+        <linearGradient id="d8wave1" x1="0" y1="0" x2="1" y2="0.5">
+          <stop offset="0%" stopColor="white" stopOpacity="0.06" />
+          <stop offset="50%" stopColor="white" stopOpacity="0.10" />
+          <stop offset="100%" stopColor="white" stopOpacity="0.04" />
+        </linearGradient>
+        <linearGradient id="d8wave2" x1="0" y1="0.5" x2="1" y2="0">
+          <stop offset="0%" stopColor="white" stopOpacity="0.04" />
+          <stop offset="100%" stopColor="white" stopOpacity="0.07" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M-50 280 C100 220, 250 340, 400 260 S650 180, 800 240 S950 320, 1000 260"
+        stroke="url(#d8wave1)"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M-50 310 C120 250, 280 370, 430 290 S690 210, 840 270 S990 350, 1060 290"
+        stroke="url(#d8wave2)"
+        strokeWidth="0.8"
+      />
+      <path
+        d="M0 400 L0 320 C140 260, 290 370, 440 300 S700 230, 860 280 S1010 350, 900 310 L900 400 Z"
+        fill="url(#d8wave1)"
+        opacity="0.5"
+      />
+      <circle cx="220" cy="290" r="2.5" fill="white" opacity="0.07" />
+      <circle cx="450" cy="270" r="3" fill="white" opacity="0.05" />
+      <circle cx="680" cy="235" r="2" fill="white" opacity="0.08" />
+      <circle cx="820" cy="260" r="3" fill="white" opacity="0.05" />
+    </svg>
   )
 }
 
@@ -1840,7 +1897,7 @@ function VariantD3(props: HeroVariantProps) {
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#DDDD03]/50 to-transparent z-20" />
 
         {/* Diamond watermark */}
-        <InlineDiamondWatermark opacity={0.04} />
+        <InlineDiamondWatermark />
 
         <div className="relative z-10 px-6 py-5">
           {/* Top row */}
@@ -2263,7 +2320,7 @@ function VariantD5(props: HeroVariantProps) {
       }}
     >
       {/* Diamond watermark */}
-      <InlineDiamondWatermark opacity={0.035} />
+      <InlineDiamondWatermark />
 
       {/* Content */}
       <div className="relative z-10 px-6 py-6 grid grid-cols-[1.6fr_1fr] gap-6">
@@ -2918,22 +2975,22 @@ function VariantD8(props: HeroVariantProps) {
 
   return (
     <div
-      className="rounded-2xl border border-white/10 shadow-[0_8px_32px_rgba(16,55,52,0.12)] overflow-hidden relative"
+      className="rounded-2xl border border-white/10 shadow-[0_8px_32px_rgba(16,55,52,0.16)] overflow-hidden relative"
       style={{
-        backgroundColor: '#103734',
-        backgroundImage: `
-          radial-gradient(ellipse at 20% 30%, rgba(30,122,115,0.6) 0%, transparent 50%),
-          radial-gradient(ellipse at 80% 20%, rgba(0,166,80,0.3) 0%, transparent 55%),
-          radial-gradient(ellipse at 60% 80%, rgba(58,163,156,0.4) 0%, transparent 55%),
-          linear-gradient(135deg, #103734 0%, #155F59 100%)
-        `,
+        background:
+          'linear-gradient(135deg, #103734 0%, #155F59 35%, #1E7A73 70%, #3AA39C 100%)',
       }}
     >
-      {/* Diamond watermark */}
-      <InlineDiamondWatermark opacity={0.035} />
+      {/* Wrapper: contains watermarks + content, above footer */}
+      <div className="relative">
+        {/* Layer 1: Diamond watermark — randomized organic feel */}
+        <InlineDiamondWatermark opacityBase={0.012} opacityVariance={0.012} />
 
-      {/* Content — full width */}
-      <div className="relative z-10 px-6 py-6">
+        {/* Layer 2: Wave watermark — adds organic motion */}
+        <InlineWaveWatermark />
+
+        {/* Layer 3: Content — full width */}
+        <div className="relative z-10 px-6 py-6">
         {/* ============================================================
             Identity + Form + Team (full width)
         ============================================================ */}
@@ -3024,6 +3081,7 @@ function VariantD8(props: HeroVariantProps) {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
 

@@ -9,7 +9,6 @@ import { Button } from '@/components/ui'
 import { ProgressBar } from '@/components/ui/progress-bar'
 import { CircularScoreGauge } from '@/components/data-display/circular-score-gauge'
 import { CheckIcon, XIcon, CheckCircleIcon } from '@/assets/icons'
-import { EvalClipboardWatermark } from './eval-watermarks'
 import { getScoreColor } from '@/design-system/tokens'
 import type { TeamMember, EvaluationType } from '@/types'
 
@@ -82,26 +81,16 @@ export function EvalSidebar({
 
   return (
     <div className={className}>
-      <div className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
+      <div className="sticky top-24">
         <div
-          className="relative overflow-hidden rounded-2xl border border-white/60"
+          className="relative rounded-2xl bg-white"
           style={{
-            background: 'rgba(255, 255, 255, 0.75)',
-            backdropFilter: 'blur(24px)',
-            WebkitBackdropFilter: 'blur(24px)',
-            boxShadow: '0 8px 32px rgba(30,122,115,0.10), 0 1px 3px rgba(0,0,0,0.04)',
+            border: '1px solid #F3F4F6',
+            boxShadow:
+              '0 1px 2px rgba(0,0,0,0.04), 0 4px 8px rgba(0,0,0,0.03), 0 12px 24px rgba(30,122,115,0.06)',
           }}
         >
-          {/* Top accent bar */}
-          <div
-            className="absolute top-0 left-0 right-0 h-[3px] z-10"
-            style={{ background: 'linear-gradient(90deg, #1E7A73 0%, #3AA39C 50%, #96D4D0 100%)' }}
-          />
-
-          {/* Background watermark */}
-          <EvalClipboardWatermark />
-
-          <div className="relative z-10 p-5 pt-6">
+          <div className="relative z-10 p-5">
             {/* Score gauge with glow */}
             <div className="flex flex-col items-center mb-2">
               <div className="relative">
