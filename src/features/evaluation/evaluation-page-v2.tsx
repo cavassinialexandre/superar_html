@@ -10,8 +10,7 @@ import { useEvaluationState } from '@/hooks/use-evaluation-state'
 import { PageContainer } from '@/components/layout/app-shell'
 import { AccessDeniedToast } from '@/components/ui/access-denied-toast'
 import { Breadcrumb } from '@/components/layout/breadcrumb'
-import { AdvanceDialog } from '@/components/ui/advance-dialog'
-import { EvaluationResultModal } from '@/components/ui/evaluation-result-modal'
+import { EvaluationConfirmModal } from '@/components/ui/evaluation-confirm-modal'
 import { evalStaggerContainer, staggerItem } from '@/design-system/animations'
 import type { AnswerValue, Question } from '@/types'
 
@@ -96,9 +95,7 @@ export function EvaluationPageV2() {
     answers,
     presentMembers,
     otherPeople,
-    showResult,
-    showAdvanceDialog,
-    advanceDecision,
+    showConfirmModal,
     answeredCount,
     totalQuestions,
     progress,
@@ -117,8 +114,8 @@ export function EvaluationPageV2() {
     evaluationDate,
     setEvaluationDate,
     handleFinalize,
-    handleAdvanceDecision,
-    setShowResult,
+    handleConfirmSave,
+    setShowConfirmModal,
     navigate,
     deniedMessage,
     dismissDenied,
@@ -294,7 +291,6 @@ export function EvaluationPageV2() {
             3. MOBILE COMPONENTS
         ================================================================ */}
         <EvalMobileBar
-          score={score}
           meta={meta}
           progress={progress}
           answeredCount={answeredCount}
@@ -302,6 +298,8 @@ export function EvaluationPageV2() {
           evalType={evalType as 'audit' | 'followup'}
           eligibility={eligibility}
           sections={sectionNavItems}
+          pointsBreakdown={pointsBreakdown}
+          pointsMeta={pointsMeta}
           canFinalize={canFinalize}
           sidebarOpen={sidebarOpen}
           onOpenSidebar={() => setSidebarOpen(true)}
@@ -313,31 +311,19 @@ export function EvaluationPageV2() {
         {/* ================================================================
             4. DIALOGS / MODALS
         ================================================================ */}
-        {showAdvanceDialog && (
-          <AdvanceDialog
+        {showConfirmModal && (
+          <EvaluationConfirmModal
             group={group}
-            score={score}
+            evalType={evalType as 'audit' | 'followup'}
+            score={pointsBreakdown.percentage}
             meta={meta}
-            onDecision={handleAdvanceDecision}
-          />
-        )}
-
-        {showResult && (
-          <EvaluationResultModal
-            group={group}
-            evalType={evalType}
-            score={score}
-            meta={meta}
-            advanceDecision={advanceDecision}
+            pointsBreakdown={pointsBreakdown}
             eligibility={eligibility}
-            onNavigateGroup={() => {
-              setShowResult(false)
-              navigate({ to: '/groups/$groupId', params: { groupId: group.id } })
-            }}
-            onNavigateDashboard={() => {
-              setShowResult(false)
-              navigate({ to: '/dashboard' })
-            }}
+            answeredCount={answeredCount}
+            totalQuestions={totalQuestions}
+            presentMembers={presentMembers}
+            onConfirm={handleConfirmSave}
+            onCancel={() => setShowConfirmModal(false)}
           />
         )}
       </motion.div>

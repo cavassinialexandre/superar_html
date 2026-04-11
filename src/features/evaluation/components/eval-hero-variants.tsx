@@ -13,7 +13,7 @@
  * G — (below)
  */
 
-import { useState } from 'react'
+import { useState, Fragment } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/cn'
 import { Badge, Input, Label } from '@/components/ui'
@@ -2947,6 +2947,38 @@ function VariantD7(props: HeroVariantProps) {
 // ===========================================================================
 // ===========================================================================
 
+function HeroStepProgress({ current, max }: { current: number; max: number }) {
+  return (
+    <div className="flex items-center gap-2">
+      <div className="flex items-center">
+        {Array.from({ length: max }, (_, i) => {
+          const step = i + 1
+          const isCompleted = step < current
+          const isCurrent = step === current
+          return (
+            <Fragment key={step}>
+              <div
+                className={`rounded-full flex-shrink-0 ${
+                  isCurrent ? 'w-2.5 h-2.5 bg-white'
+                  : isCompleted ? 'w-2 h-2 bg-white'
+                  : 'w-2 h-2 bg-white/25'
+                }`}
+                style={isCurrent ? { boxShadow: '0 0 0 3px rgba(255,255,255,0.2)' } : undefined}
+              />
+              {step < max && (
+                <div className={`h-[1.5px] w-3 ${step < current ? 'bg-white/40' : 'bg-white/12'}`} />
+              )}
+            </Fragment>
+          )
+        })}
+      </div>
+      <span className="text-[9px] text-white/50 uppercase tracking-[0.15em] font-semibold tabular-nums ml-0.5">
+        Passo {current}
+      </span>
+    </div>
+  )
+}
+
 function VariantD8(props: HeroVariantProps) {
   const {
     group,
@@ -3009,15 +3041,20 @@ function VariantD8(props: HeroVariantProps) {
                 </span>
               </div>
             </div>
-            <span
-              className="text-white/90 text-xs uppercase tracking-[0.2em] font-medium px-5 py-2 rounded-lg flex-shrink-0"
-              style={{
-                background: 'transparent',
-                border: '2px solid rgba(255,255,255,0.35)',
-              }}
-            >
-              {evalType === 'audit' ? 'Auditoria' : 'Follow-Up'}
-            </span>
+            <div className="flex flex-col items-end gap-2.5 flex-shrink-0">
+              <span
+                className="text-white/90 text-xs uppercase tracking-[0.2em] font-medium px-5 py-2 rounded-lg"
+                style={{
+                  background: 'transparent',
+                  border: '2px solid rgba(255,255,255,0.35)',
+                }}
+              >
+                {evalType === 'audit' ? 'Auditoria' : 'Follow-Up'}
+              </span>
+              {evalType === 'audit' && (
+                <HeroStepProgress current={group.currentSequence} max={group.maxSequence} />
+              )}
+            </div>
           </div>
 
           <div className="h-px bg-white/10 my-5" />

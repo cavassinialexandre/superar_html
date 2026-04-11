@@ -25,9 +25,7 @@ export function useEvaluationState() {
   const checklist = checklists[0]
 
   const [answers, setAnswers] = useState<Record<string, QuestionState>>({})
-  const [showResult, setShowResult] = useState(false)
-  const [showAdvanceDialog, setShowAdvanceDialog] = useState(false)
-  const [advanceDecision, setAdvanceDecision] = useState<'advance' | 'maintain' | null>(null)
+  const [showConfirmModal, setShowConfirmModal] = useState(false)
   const [presentMembers, setPresentMembers] = useState<string[]>([])
   const [otherPeople, setOtherPeople] = useState('')
   const [evaluationDate, setEvaluationDate] = useState(
@@ -159,18 +157,14 @@ export function useEvaluationState() {
 
   const handleFinalize = useCallback(() => {
     if (!checkAccess('evaluator')) return
-    if (evalType === 'audit' && eligibility.eligible) {
-      setShowAdvanceDialog(true)
-    } else {
-      setShowResult(true)
-    }
-  }, [checkAccess, evalType, eligibility.eligible])
+    setShowConfirmModal(true)
+  }, [checkAccess])
 
-  const handleAdvanceDecision = useCallback((decision: 'advance' | 'maintain') => {
-    setAdvanceDecision(decision)
-    setShowAdvanceDialog(false)
-    setShowResult(true)
-  }, [])
+  const handleConfirmSave = useCallback((_decision: 'advance' | 'maintain' | null) => {
+    // TODO: persist to backend with decision
+    setShowConfirmModal(false)
+    navigate({ to: '/groups/$groupId', params: { groupId: groupId! } })
+  }, [navigate, groupId])
 
   return {
     // Data
@@ -187,9 +181,7 @@ export function useEvaluationState() {
     presentMembers,
     otherPeople,
     evaluationDate,
-    showResult,
-    showAdvanceDialog,
-    advanceDecision,
+    showConfirmModal,
 
     // Computed
     answeredCount,
@@ -211,9 +203,8 @@ export function useEvaluationState() {
     setOtherPeople,
     setEvaluationDate,
     handleFinalize,
-    handleAdvanceDecision,
-    setShowResult,
-    setShowAdvanceDialog,
+    handleConfirmSave,
+    setShowConfirmModal,
 
     // Access control
     deniedMessage,
