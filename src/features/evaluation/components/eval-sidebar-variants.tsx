@@ -1119,7 +1119,7 @@ function VariantS5(props: InternalProps) {
         >
           {/* Header — split 2-col with separator */}
           <div
-            className="px-4 py-2.5 flex items-center"
+            className="px-4 flex items-center h-[56px]"
             style={{ background: 'linear-gradient(180deg, #F8FAFA 0%, #FFFFFF 100%)', borderBottom: '0.5px solid #E4E8E8' }}
           >
             <span className="flex-1 text-[10px] uppercase tracking-[0.22em] text-primary-700 font-bold">

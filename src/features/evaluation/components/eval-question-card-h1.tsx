@@ -7,7 +7,7 @@
  * Fully self-contained -- no cross-variant imports.
  */
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/cn'
 import { Label, Textarea } from '@/components/ui'
@@ -48,6 +48,45 @@ const ANSWER_COLORS: Record<AnswerValue, string> = {
   partial: '#DDDD03',
   no: '#CE3C5A',
   na: '#A3ADAC',
+}
+
+// Premium dark tones for points display (matching gauge aesthetic)
+const ANSWER_DARK_COLORS: Record<AnswerValue, string> = {
+  yes: '#065F46',
+  partial: '#92400E',
+  no: '#9F1239',
+  na: '#4B5563',
+}
+
+/** Compute earned points for a single question */
+function computeQuestionPoints(weight: number, answer: AnswerValue | null | undefined) {
+  if (!answer || answer === 'na') {
+    return { earned: 0, max: weight, pct: 0, label: '—', isNA: answer === 'na', isAnswered: !!answer }
+  }
+  const earned = answer === 'yes' ? weight : answer === 'partial' ? weight * 0.5 : 0
+  const pct = (earned / weight) * 100
+  const label = `+${earned % 1 === 0 ? earned : earned.toFixed(1)}`
+  return { earned, max: weight, pct, label, isNA: false, isAnswered: true }
+}
+
+/** Starburst seal SVG path for points display */
+function StarburstSeal({ size = 36, color }: { size?: number; color: string }) {
+  const cx = size / 2
+  const cy = size / 2
+  const outerR = size / 2
+  const innerR = size / 2 * 0.78
+  const points = 18
+  const pts: string[] = []
+  for (let i = 0; i < points * 2; i++) {
+    const angle = (Math.PI * i) / points - Math.PI / 2
+    const r = i % 2 === 0 ? outerR : innerR
+    pts.push(`${cx + r * Math.cos(angle)},${cy + r * Math.sin(angle)}`)
+  }
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="absolute inset-0">
+      <polygon points={pts.join(' ')} fill={color} />
+    </svg>
+  )
 }
 
 // ---------------------------------------------------------------------------
@@ -136,25 +175,6 @@ function getAnswerColor(answer: AnswerValue | null | undefined): string {
 }
 
 // ---------------------------------------------------------------------------
-// Ring pulse animation on selection
-// ---------------------------------------------------------------------------
-
-function RingPulse({ color }: { color: string }) {
-  return (
-    <motion.div
-      initial={{ scale: 1, opacity: 0.4 }}
-      animate={{ scale: 2, opacity: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="absolute inset-0 rounded-full pointer-events-none"
-      style={{
-        border: `2px solid ${color}`,
-      }}
-    />
-  )
-}
-
-// ---------------------------------------------------------------------------
 // Component
 // ---------------------------------------------------------------------------
 
@@ -174,6 +194,7 @@ export function EvalQuestionCardH1({
   const hasAnswer = !!state?.answer
   const answerColor = getAnswerColor(state?.answer)
   const needsJustification = state?.answer === 'no' || state?.answer === 'partial'
+  const pointsInfo = computeQuestionPoints(question.weight, state?.answer)
 
   // Track the answer that just triggered a ring pulse
   const [pulsingAnswer, setPulsingAnswer] = useState<AnswerValue | null>(null)
@@ -184,6 +205,9 @@ export function EvalQuestionCardH1({
 
   const hasComment = !!state?.comment
   const attachmentCount = state?.attachments?.length ?? 0
+
+  // Ref for P7 — toolbar bottom marks where the strip should end
+  const toolbarRef = useRef<HTMLDivElement>(null)
 
   function handleAnswer(value: AnswerValue) {
     setPulsingAnswer(value)
@@ -279,7 +303,7 @@ export function EvalQuestionCardH1({
         </div>
 
         {/* Answer selector -- elegant rounded rectangles */}
-        <div className="flex justify-center py-2 mb-3">
+        <div className="flex justify-center mb-3 py-2">
         <div className="grid grid-cols-4 gap-2.5 w-full max-w-[400px]">
           {ANSWER_OPTIONS.map((opt) => {
             const isSelected = state?.answer === opt.value
@@ -340,11 +364,10 @@ export function EvalQuestionCardH1({
         </div>
         </div>
 
-
         {/* ----------------------------------------------------------------- */}
         {/* H1: Toolbar Inline -- comment + attachment toggle buttons         */}
         {/* ----------------------------------------------------------------- */}
-        <div className="flex justify-center mt-1">
+        <div ref={toolbarRef} className="flex justify-center mt-1">
           <div className="grid grid-cols-2 gap-2 w-full max-w-[280px]">
             {/* Comment toggle button */}
             <button
@@ -469,6 +492,53 @@ export function EvalQuestionCardH1({
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Starburst seal — points indicator (left margin) */}
+        {hasAnswer && (() => {
+          const el = toolbarRef.current
+          const h = el ? el.offsetTop + el.offsetHeight : undefined
+          return (
+            <div
+              className="absolute top-0 flex items-center justify-center"
+              style={{
+                left: 2,
+                width: 56,
+                height: h,
+                bottom: h ? undefined : 0,
+              }}
+            >
+              <div className="relative flex items-center justify-center" style={{ width: 41, height: 41 }}>
+                <StarburstSeal size={41} color={`${answerColor}30`} />
+                <div className="relative z-10 flex flex-col items-center">
+                  <span
+                    className="tabular-nums leading-none"
+                    style={{
+                      fontSize: 11,
+                      fontWeight: 900,
+                      fontFamily: "'Plus Jakarta Sans', system-ui",
+                      color: ANSWER_DARK_COLORS[state!.answer!],
+                      letterSpacing: '-0.03em',
+                    }}
+                  >
+                    {pointsInfo.label}
+                  </span>
+                  <span
+                    className="uppercase leading-none"
+                    style={{
+                      fontSize: 6,
+                      fontWeight: 600,
+                      letterSpacing: '0.08em',
+                      color: `${ANSWER_DARK_COLORS[state!.answer!]}70`,
+                      marginTop: 1,
+                    }}
+                  >
+                    pts
+                  </span>
+                </div>
+              </div>
+            </div>
+          )
+        })()}
       </motion.div>
     </motion.div>
   )

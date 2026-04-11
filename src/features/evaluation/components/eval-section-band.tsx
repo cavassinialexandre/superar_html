@@ -1,17 +1,13 @@
 /**
- * Color Band Section Variants (F-H)
+ * Section Band — Floating Band + Depth layout for question groups.
  *
- * F — Seamless Merge (no gap between band and body)
- * G — Split Asymmetric Band (left gradient + right info panel)
- * H — Floating Band + Depth (detached band with shadow layers)
+ * Each section renders a gradient header band with a collapsible
+ * list of EvalQuestionCardH1 cards beneath it.
  */
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { cn } from '@/lib/cn'
 import { WideDiamondPattern } from './eval-watermarks'
-import { EvalQuestionCardF } from './eval-question-card-f'
-import { EvalQuestionCardG } from './eval-question-card-g'
 import { EvalQuestionCardH1 } from './eval-question-card-h1'
 import {
   evalStaggerContainer,
@@ -31,7 +27,7 @@ interface QuestionState {
   attachments: File[]
 }
 
-interface SectionDef {
+export interface SectionDef {
   title: string
   color: string
   colorDark: string
@@ -40,10 +36,7 @@ interface SectionDef {
   questions: Question[]
 }
 
-type BandVariant = 'F' | 'G' | 'H'
-
 interface EvalSectionBandProps {
-  variant?: BandVariant
   sections: SectionDef[]
   allQuestions: Question[]
   answers: Record<string, QuestionState>
@@ -72,12 +65,10 @@ function sectionProgress(
 }
 
 // ---------------------------------------------------------------------------
-// Section Icons (16px inline SVGs)
+// Section Icons (19px inline SVGs)
 // ---------------------------------------------------------------------------
 
 function getSectionIcon(_icon: string, color = 'white'): React.ReactNode {
-  // Unified question-group icon (chat bubble with question mark)
-  // fill + stroke combo + bigger size for better visibility on gradient backgrounds
   return (
     <svg
       width="19"
@@ -104,16 +95,10 @@ function getSectionIcon(_icon: string, color = 'white'): React.ReactNode {
 function BandProgressRing({
   answered,
   total,
-  strokeColor = 'white',
-  textColor = 'white',
-  trackOpacity = 0.2,
   size = 36,
 }: {
   answered: number
   total: number
-  strokeColor?: string
-  textColor?: string
-  trackOpacity?: number
   size?: number
 }) {
   const sw = 3
@@ -130,16 +115,16 @@ function BandProgressRing({
         cy={center}
         r={r}
         fill="none"
-        stroke={strokeColor}
+        stroke="white"
         strokeWidth={sw}
-        opacity={trackOpacity}
+        opacity={0.2}
       />
       <motion.circle
         cx={center}
         cy={center}
         r={r}
         fill="none"
-        stroke={strokeColor}
+        stroke="white"
         strokeWidth={sw}
         strokeLinecap="round"
         strokeDasharray={circ}
@@ -154,7 +139,7 @@ function BandProgressRing({
         y={center}
         textAnchor="middle"
         dominantBaseline="central"
-        fill={textColor}
+        fill="white"
         fontSize={size * 0.28}
         fontWeight="bold"
       >
@@ -165,221 +150,10 @@ function BandProgressRing({
 }
 
 // ===========================================================================
-// VARIANT F — Seamless Merge
+// Section renderer — Floating Band + Depth
 // ===========================================================================
 
-function VariantF({
-  section,
-  allQuestions,
-  answers,
-  sectionRef,
-  onAnswer,
-  onJustification,
-  onAddAttachments,
-  onRemoveAttachment,
-}: {
-  section: SectionDef
-  allQuestions: Question[]
-  answers: Record<string, QuestionState>
-  sectionRef: React.RefObject<HTMLDivElement | null>
-  onAnswer: (questionId: string, value: AnswerValue) => void
-  onJustification: (questionId: string, text: string) => void
-  onAddAttachments: (questionId: string, files: File[]) => void
-  onRemoveAttachment: (questionId: string, index: number) => void
-}) {
-  const { answered, total, percent } = sectionProgress(answers, section.questions)
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={staggerItem}
-      className="rounded-2xl overflow-hidden shadow-sm scroll-mt-24 border border-gray-200"
-    >
-      {/* Band Header */}
-      <div
-        className="relative overflow-hidden flex items-center px-5 gap-4 h-[52px] sm:h-[60px]"
-        style={{
-          background: `linear-gradient(135deg, ${section.colorDark} 0%, ${section.color} 60%, ${section.colorLight} 100%)`,
-        }}
-      >
-        <WideDiamondPattern fill="white" />
-        <div
-          className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center flex-shrink-0 relative z-10"
-          style={{ background: 'rgba(255,255,255,0.15)' }}
-        >
-          {getSectionIcon(section.icon)}
-        </div>
-        <div className="flex flex-col min-w-0 relative z-10">
-          <span className="text-sm sm:text-base font-bold text-white truncate">{section.title}</span>
-          <span className="text-[10px] text-white/60">{total} perguntas</span>
-        </div>
-        <div className="flex-1" />
-        <div className="flex items-center gap-3 relative z-10">
-          <div className="max-w-[100px] w-[100px] h-1.5 rounded-full bg-white/20 overflow-hidden hidden sm:block">
-            <motion.div
-              className="h-full rounded-full bg-white/80"
-              initial={{ width: '0%' }}
-              animate={{ width: percent + '%' }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-            />
-          </div>
-          <BandProgressRing answered={answered} total={total} />
-        </div>
-      </div>
-
-      {/* Seamless body — no border-top, no gap */}
-      <div className="bg-white px-5 py-3">
-        <motion.div
-          variants={evalSectionStagger}
-          initial="initial"
-          animate="animate"
-        >
-          {section.questions.map((question, qIdx) => {
-            const globalIndex = allQuestions.indexOf(question)
-            const isEven = qIdx % 2 === 0
-            return (
-              <motion.div key={question.id} variants={evalQuestionItem}>
-                {/* Subtle divider between questions */}
-                {qIdx > 0 && (
-                  <div
-                    className="h-px my-3 mx-2"
-                    style={{ backgroundColor: `${section.colorLight}12` }}
-                  />
-                )}
-                <div
-                  className="rounded-xl p-0.5"
-                  style={{
-                    backgroundColor: isEven ? `${section.colorLight}05` : 'transparent',
-                  }}
-                >
-                  <EvalQuestionCardF
-                    question={question}
-                    index={globalIndex}
-                    state={answers[question.id]}
-                    sectionColor={section.color}
-                    onAnswer={(v) => onAnswer(question.id, v)}
-                    onJustification={(t) => onJustification(question.id, t)}
-                    onAddAttachments={(f) => onAddAttachments(question.id, f)}
-                    onRemoveAttachment={(i) => onRemoveAttachment(question.id, i)}
-                  />
-                </div>
-              </motion.div>
-            )
-          })}
-        </motion.div>
-      </div>
-    </motion.div>
-  )
-}
-
-// ===========================================================================
-// VARIANT G — Split Asymmetric Band
-// ===========================================================================
-
-function VariantG({
-  section,
-  allQuestions,
-  answers,
-  sectionRef,
-  onAnswer,
-  onJustification,
-  onAddAttachments,
-  onRemoveAttachment,
-}: {
-  section: SectionDef
-  allQuestions: Question[]
-  answers: Record<string, QuestionState>
-  sectionRef: React.RefObject<HTMLDivElement | null>
-  onAnswer: (questionId: string, value: AnswerValue) => void
-  onJustification: (questionId: string, text: string) => void
-  onAddAttachments: (questionId: string, files: File[]) => void
-  onRemoveAttachment: (questionId: string, index: number) => void
-}) {
-  const { answered, total, percent } = sectionProgress(answers, section.questions)
-
-  return (
-    <motion.div
-      ref={sectionRef}
-      variants={staggerItem}
-      className="rounded-2xl overflow-hidden shadow-sm scroll-mt-24"
-    >
-      {/* Split Header: gradient left + white right */}
-      <div className="flex">
-        {/* Left: gradient area */}
-        <div
-          className="relative overflow-hidden flex items-center px-5 gap-3 h-[60px] flex-1 min-w-0 rounded-tl-2xl"
-          style={{
-            background: `linear-gradient(135deg, ${section.colorDark} 0%, ${section.color} 60%, ${section.colorLight} 100%)`,
-          }}
-        >
-          <WideDiamondPattern fill="white" />
-          <div
-            className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 relative z-10"
-            style={{ background: 'rgba(255,255,255,0.15)' }}
-          >
-            {getSectionIcon(section.icon)}
-          </div>
-          <span className="text-sm font-bold text-white relative z-10 truncate">{section.title}</span>
-        </div>
-
-        {/* Right: white info panel */}
-        <div
-          className="w-[120px] sm:w-[140px] flex-shrink-0 flex flex-col items-center justify-center gap-1 bg-white border-b border-gray-200 rounded-tr-2xl"
-          style={{ borderLeft: `1px solid ${section.colorLight}30` }}
-        >
-          <BandProgressRing
-            answered={answered}
-            total={total}
-            strokeColor={section.color}
-            textColor={section.colorDark}
-            trackOpacity={0.12}
-            size={40}
-          />
-          <span
-            className="text-[10px] font-medium tabular-nums"
-            style={{ color: `${section.colorDark}90` }}
-          >
-            {answered}/{total}
-          </span>
-        </div>
-      </div>
-
-      {/* Body with left accent per card */}
-      <div className="bg-white border border-t-0 border-gray-200 rounded-b-2xl p-4 space-y-3">
-        <motion.div
-          variants={evalSectionStagger}
-          initial="initial"
-          animate="animate"
-          className="space-y-3"
-        >
-          {section.questions.map((question) => {
-            const globalIndex = allQuestions.indexOf(question)
-            return (
-              <motion.div key={question.id} variants={evalQuestionItem}>
-                <EvalQuestionCardG
-                  question={question}
-                  index={globalIndex}
-                  state={answers[question.id]}
-                  sectionColor={section.color}
-                  onAnswer={(v) => onAnswer(question.id, v)}
-                  onJustification={(t) => onJustification(question.id, t)}
-                  onAddAttachments={(f) => onAddAttachments(question.id, f)}
-                  onRemoveAttachment={(i) => onRemoveAttachment(question.id, i)}
-                />
-              </motion.div>
-            )
-          })}
-        </motion.div>
-      </div>
-    </motion.div>
-  )
-}
-
-// ===========================================================================
-// VARIANT H — Floating Band + Depth
-// ===========================================================================
-
-function VariantH({
+function SectionBand({
   section,
   allQuestions,
   answers,
@@ -439,7 +213,6 @@ function VariantH({
             />
           </div>
           <BandProgressRing answered={answered} total={total} />
-          {/* Collapse/expand toggle */}
           <button
             onClick={() => setExpanded(!expanded)}
             className="flex items-center justify-center flex-shrink-0 cursor-pointer text-white/70 hover:text-white transition-colors"
@@ -473,10 +246,7 @@ function VariantH({
             transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
             className="overflow-hidden"
           >
-            {/* Gap between floating band and cards */}
             <div className="h-3" />
-
-            {/* Question cards float freely — no wrapper card */}
             <motion.div
               variants={evalSectionStagger}
               initial="initial"
@@ -485,22 +255,21 @@ function VariantH({
             >
               {section.questions.map((question) => {
                 const globalIndex = allQuestions.indexOf(question)
-                const cardProps = {
-                  question,
-                  index: globalIndex,
-                  state: answers[question.id],
-                  sectionColor: section.color,
-                  sectionColorDark: section.colorDark,
-                  sectionColorLight: section.colorLight,
-                  onAnswer: (v: AnswerValue) => onAnswer(question.id, v),
-                  onJustification: (t: string) => onJustification(question.id, t),
-                  onComment: (t: string) => onComment?.(question.id, t),
-                  onAddAttachments: (f: File[]) => onAddAttachments(question.id, f),
-                  onRemoveAttachment: (i: number) => onRemoveAttachment(question.id, i),
-                }
                 return (
                   <motion.div key={question.id} variants={evalQuestionItem}>
-                    <EvalQuestionCardH1 {...cardProps} />
+                    <EvalQuestionCardH1
+                      question={question}
+                      index={globalIndex}
+                      state={answers[question.id]}
+                      sectionColor={section.color}
+                      sectionColorDark={section.colorDark}
+                      sectionColorLight={section.colorLight}
+                      onAnswer={(v) => onAnswer(question.id, v)}
+                      onJustification={(t) => onJustification(question.id, t)}
+                      onComment={(t) => onComment?.(question.id, t)}
+                      onAddAttachments={(f) => onAddAttachments(question.id, f)}
+                      onRemoveAttachment={(i) => onRemoveAttachment(question.id, i)}
+                    />
                   </motion.div>
                 )
               })}
@@ -517,7 +286,6 @@ function VariantH({
 // ===========================================================================
 
 export function EvalSectionBand({
-  variant = 'F',
   sections,
   allQuestions,
   answers,
@@ -528,16 +296,6 @@ export function EvalSectionBand({
   onRemoveAttachment,
   sectionRefs,
 }: EvalSectionBandProps) {
-  const sharedProps = {
-    allQuestions,
-    answers,
-    onAnswer,
-    onJustification,
-    onComment,
-    onAddAttachments,
-    onRemoveAttachment,
-  }
-
   return (
     <motion.div
       variants={evalStaggerContainer}
@@ -545,21 +303,20 @@ export function EvalSectionBand({
       animate="animate"
       className="space-y-6"
     >
-      {sections.map((section, idx) => {
-        const key = `${section.title}-${variant}`
-        const ref = sectionRefs[idx]
-
-        switch (variant) {
-          case 'F':
-            return <VariantF key={key} section={section} sectionRef={ref} {...sharedProps} />
-          case 'G':
-            return <VariantG key={key} section={section} sectionRef={ref} {...sharedProps} />
-          case 'H':
-            return <VariantH key={key} section={section} sectionRef={ref} {...sharedProps} />
-          default:
-            return <VariantF key={key} section={section} sectionRef={ref} {...sharedProps} />
-        }
-      })}
+      {sections.map((section, idx) => (
+        <SectionBand
+          key={section.title}
+          section={section}
+          allQuestions={allQuestions}
+          answers={answers}
+          sectionRef={sectionRefs[idx]}
+          onAnswer={onAnswer}
+          onJustification={onJustification}
+          onComment={onComment}
+          onAddAttachments={onAddAttachments}
+          onRemoveAttachment={onRemoveAttachment}
+        />
+      ))}
     </motion.div>
   )
 }

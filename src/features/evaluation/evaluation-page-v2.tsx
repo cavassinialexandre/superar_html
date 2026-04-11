@@ -16,24 +16,17 @@ import { evalStaggerContainer, staggerItem } from '@/design-system/animations'
 import type { AnswerValue, Question } from '@/types'
 
 import {
-  EvalHeroSection,
   EvalSidebarVariants,
   EvalMobileBar,
 } from './components'
 import { EvalSectionBand } from './components/eval-section-band'
+import type { SectionDef } from './components/eval-section-band'
 import { EvalHeroVariants } from './components/eval-hero-variants'
-import type { SectionDef } from './components'
 
 // ---------------------------------------------------------------------------
 // Section variant types
 // ---------------------------------------------------------------------------
 
-
-interface ExtendedSectionDef extends SectionDef {
-  colorDark: string
-  colorLight: string
-  icon: string
-}
 
 // ---------------------------------------------------------------------------
 // Section definitions (thematic grouping by question index)
@@ -136,15 +129,6 @@ export function EvaluationPageV2() {
 
   // ---- Thematic section grouping (by question index range) ----------------
   const sectionData = useMemo<SectionDef[]>(() => {
-    return SECTION_DEFS.map((def) => ({
-      title: def.title,
-      color: def.color,
-      questions: questions.slice(def.range[0], def.range[1]),
-    }))
-  }, [questions])
-
-  // Extended section data with colorDark/colorLight/icon for new variants
-  const extendedSectionData = useMemo<ExtendedSectionDef[]>(() => {
     return SECTION_DEFS.map((def) => ({
       title: def.title,
       color: def.color,
@@ -271,8 +255,7 @@ export function EvaluationPageV2() {
           {/* Left: Section Content */}
           <div className="flex-1 min-w-0">
             <EvalSectionBand
-              variant="H"
-              sections={extendedSectionData}
+              sections={sectionData}
               allQuestions={questions}
               answers={answers}
               onAnswer={setAnswer}

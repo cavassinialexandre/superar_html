@@ -705,7 +705,7 @@ function InlineAttendancePanel({
             member={m}
             isPresent={presentMembers.includes(m.name)}
             onToggle={() => onToggleMember(m.name)}
-            size={28}
+            size={42}
           />
         ))}
       </div>
@@ -2995,7 +2995,7 @@ function VariantD8(props: HeroVariantProps) {
             Identity + Form + Team (full width)
         ============================================================ */}
         <div>
-          <div className="flex items-start justify-between mb-2">
+          <div className="flex items-center justify-between mb-2">
             <div className="flex-1 min-w-0">
               <div className="text-[11px] text-white/40 mb-1">
                 {group.managementName} / {group.areaName}
@@ -3004,14 +3004,20 @@ function VariantD8(props: HeroVariantProps) {
                 {group.name}
               </h2>
               <div className="flex items-center gap-2 mt-2">
-                <span className="bg-white/15 text-white text-[10px] px-2.5 py-0.5 rounded-full font-semibold">
-                  {evalType === 'audit' ? 'Auditoria' : 'Follow-Up'}
-                </span>
                 <span className="text-[10px] text-white/50 uppercase tracking-wider">
                   {group.groupTypeName}
                 </span>
               </div>
             </div>
+            <span
+              className="text-white/90 text-xs uppercase tracking-[0.2em] font-medium px-5 py-2 rounded-lg flex-shrink-0"
+              style={{
+                background: 'transparent',
+                border: '2px solid rgba(255,255,255,0.35)',
+              }}
+            >
+              {evalType === 'audit' ? 'Auditoria' : 'Follow-Up'}
+            </span>
           </div>
 
           <div className="h-px bg-white/10 my-5" />
