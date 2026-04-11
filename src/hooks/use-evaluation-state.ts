@@ -9,6 +9,7 @@ import type { AnswerValue, Question } from '@/types'
 export interface QuestionState {
   answer: AnswerValue | null
   justification: string
+  comment: string
   attachments: File[]
 }
 
@@ -29,6 +30,9 @@ export function useEvaluationState() {
   const [advanceDecision, setAdvanceDecision] = useState<'advance' | 'maintain' | null>(null)
   const [presentMembers, setPresentMembers] = useState<string[]>([])
   const [otherPeople, setOtherPeople] = useState('')
+  const [evaluationDate, setEvaluationDate] = useState(
+    () => new Date().toISOString().split('T')[0],
+  )
 
   // Pega a revisão ativa do checklist (ou a primeira revisão disponível)
   const activeRevision = checklist?.revisions?.find(r => r.status === 'active') || checklist?.revisions?.[0]
@@ -50,6 +54,30 @@ export function useEvaluationState() {
     return totalWeight > 0 ? (earnedWeight / totalWeight) * 100 : 0
   }, [answers, questions])
 
+  // Points breakdown — different from `score`:
+  // max starts with sum of ALL weights, NA removes from max,
+  // unanswered counts toward max but not earned
+  const pointsBreakdown = useMemo(() => {
+    let max = 0
+    let earned = 0
+    questions.forEach((q: Question) => {
+      const a = answers[q.id]?.answer
+      if (a === 'na') {
+        // NA reduces max — skip entirely
+        return
+      }
+      max += q.weight
+      if (a === 'yes') earned += q.weight
+      if (a === 'partial') earned += q.weight * 0.5
+      // 'no' or unanswered: earned += 0
+    })
+    return {
+      earned,
+      max,
+      percentage: max > 0 ? (earned / max) * 100 : 0,
+    }
+  }, [answers, questions])
+
   const meta = group ? getMetaForSequence(group.groupTypeId, group.currentSequence, groupTypes) : 80
 
   const eligibility = useMemo(() => {
@@ -65,6 +93,7 @@ export function useEvaluationState() {
       [questionId]: {
         answer,
         justification: prev[questionId]?.justification || '',
+        comment: prev[questionId]?.comment || '',
         attachments: prev[questionId]?.attachments || [],
       },
     }))
@@ -77,6 +106,20 @@ export function useEvaluationState() {
         ...prev[questionId],
         answer: prev[questionId]?.answer || null,
         justification,
+        comment: prev[questionId]?.comment || '',
+        attachments: prev[questionId]?.attachments || [],
+      },
+    }))
+  }, [])
+
+  const setComment = useCallback((questionId: string, comment: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [questionId]: {
+        ...prev[questionId],
+        answer: prev[questionId]?.answer || null,
+        justification: prev[questionId]?.justification || '',
+        comment,
         attachments: prev[questionId]?.attachments || [],
       },
     }))
@@ -89,6 +132,7 @@ export function useEvaluationState() {
         ...prev[questionId],
         answer: prev[questionId]?.answer || null,
         justification: prev[questionId]?.justification || '',
+        comment: prev[questionId]?.comment || '',
         attachments: [...(prev[questionId]?.attachments || []), ...files],
       },
     }))
@@ -142,6 +186,7 @@ export function useEvaluationState() {
     answers,
     presentMembers,
     otherPeople,
+    evaluationDate,
     showResult,
     showAdvanceDialog,
     advanceDecision,
@@ -151,6 +196,7 @@ export function useEvaluationState() {
     totalQuestions,
     progress,
     score,
+    pointsBreakdown,
     meta,
     eligibility,
     canFinalize,
@@ -158,10 +204,12 @@ export function useEvaluationState() {
     // Actions
     setAnswer,
     setJustification,
+    setComment,
     addAttachments,
     removeAttachment,
     toggleMember,
     setOtherPeople,
+    setEvaluationDate,
     handleFinalize,
     handleAdvanceDecision,
     setShowResult,

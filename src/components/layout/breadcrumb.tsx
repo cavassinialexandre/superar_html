@@ -10,7 +10,7 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[]
-  title: string
+  title?: string
   description?: string
 }
 
@@ -36,7 +36,9 @@ export function Breadcrumb({ items, title, description }: BreadcrumbProps) {
           </span>
         ))}
       </nav>
-      <h1 className="font-heading text-2xl font-bold text-gray-900">{title}</h1>
+      {title && (
+        <h1 className="font-heading text-2xl font-bold text-gray-900">{title}</h1>
+      )}
       {description && (
         <p className="text-sm text-gray-500">{description}</p>
       )}

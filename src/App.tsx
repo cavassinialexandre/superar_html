@@ -7,6 +7,7 @@ import { DashboardPage } from '@/features/dashboard/dashboard-page'
 import { GroupsPage } from '@/features/groups/groups-page'
 import { GroupDetailPage } from '@/features/groups/group-detail-page'
 import { EvaluationPageV2 } from '@/features/evaluation/evaluation-page-v2'
+import { EvalSidebarShowcasePage } from '@/features/evaluation/eval-sidebar-showcase-page'
 import { HistoryPage } from '@/features/history/history-page'
 import { AdminPage } from '@/features/admin/admin-page'
 import { ChecklistQuestionsPage } from '@/features/admin/checklists/questions-page'
@@ -25,6 +26,12 @@ const unitSelectionRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/',
   component: UnitSelectionPage,
+})
+
+const evalSidebarShowcaseRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/__showcase/eval-sidebar',
+  component: EvalSidebarShowcasePage,
 })
 
 const authenticatedRoute = createRoute({
@@ -107,6 +114,7 @@ const checklistQuestionsRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([
   unitSelectionRoute,
+  evalSidebarShowcaseRoute,
   authenticatedRoute.addChildren([
     dashboardRoute,
     groupsRoute,
