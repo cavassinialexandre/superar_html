@@ -2,6 +2,12 @@ export { EvalHeroSection } from './eval-hero-section'
 export { EvalSectionAccordion } from './eval-section-accordion'
 export type { SectionDef } from './eval-section-accordion'
 export { EvalSidebar } from './eval-sidebar'
+export { EvalSidebarVariants, formatPts } from './eval-sidebar-variants'
+export type {
+  EvalSidebarVariant,
+  EvalSidebarVariantsProps,
+  SectionNavItemWithPoints,
+} from './eval-sidebar-variants'
 export { EvalMobileBar } from './eval-mobile-bar'
 export { EvalSectionHero } from './eval-section-hero'
 export { EvalSectionTimeline } from './eval-section-timeline'

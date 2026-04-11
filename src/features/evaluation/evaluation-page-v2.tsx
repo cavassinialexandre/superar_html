@@ -17,7 +17,7 @@ import type { AnswerValue, Question } from '@/types'
 
 import {
   EvalHeroSection,
-  EvalSidebar,
+  EvalSidebarVariants,
   EvalMobileBar,
 } from './components'
 import { EvalSectionBand } from './components/eval-section-band'
@@ -40,10 +40,10 @@ interface ExtendedSectionDef extends SectionDef {
 // ---------------------------------------------------------------------------
 
 const SECTION_DEFS = [
-  { title: 'Organização e Limpeza', color: '#0D9488', colorDark: '#065652', colorLight: '#5EEAD4', icon: 'broom', range: [0, 3] as const },
-  { title: 'Gestão Visual e Indicadores', color: '#6366F1', colorDark: '#3730A3', colorLight: '#A5B4FC', icon: 'chart', range: [3, 5] as const },
-  { title: 'Participação e Melhoria', color: '#F59E0B', colorDark: '#B45309', colorLight: '#FCD34D', icon: 'users', range: [5, 7] as const },
-  { title: 'Equipamentos e Anomalias', color: '#EF4444', colorDark: '#B91C1C', colorLight: '#FCA5A5', icon: 'wrench', range: [7, 9] as const },
+  { title: 'Organização e Limpeza', color: '#0D9488', colorDark: '#065652', colorLight: '#5EEAD4', icon: 'broom', range: [0, 8] as const },
+  { title: 'Gestão Visual e Indicadores', color: '#6366F1', colorDark: '#3730A3', colorLight: '#A5B4FC', icon: 'chart', range: [8, 16] as const },
+  { title: 'Participação e Melhoria', color: '#F59E0B', colorDark: '#B45309', colorLight: '#FCD34D', icon: 'users', range: [16, 23] as const },
+  { title: 'Equipamentos e Anomalias', color: '#EF4444', colorDark: '#B91C1C', colorLight: '#FCA5A5', icon: 'wrench', range: [23, 30] as const },
 ]
 
 // ---------------------------------------------------------------------------
@@ -61,6 +61,33 @@ function getSectionStatus(
   if (answered === 0) return 'empty'
   if (answered === questions.length) return 'complete'
   return 'partial'
+}
+
+/**
+ * Compute section-level points breakdown matching the global `pointsBreakdown`
+ * logic in use-evaluation-state.ts: NA reduces max, yes=weight, partial=weight*0.5.
+ */
+function computeSectionPoints(
+  questions: Question[],
+  answers: Record<string, { answer: AnswerValue | null }>,
+  meta: number,
+): { pointsEarned: number; pointsMax: number; pointsMeta: number; percentageOfMax: number; sectionScore: number } {
+  let earned = 0
+  let max = 0
+  let scoreTotal = 0
+  for (const q of questions) {
+    const a = answers[q.id]?.answer
+    if (a === 'na') continue // NA excluded entirely
+    max += q.weight
+    if (a === 'yes') earned += q.weight
+    if (a === 'partial') earned += q.weight * 0.5
+    // Score-style denominator: only answered questions (same logic as header NOTA)
+    if (a) scoreTotal += q.weight
+  }
+  const pointsMeta = max * (meta / 100)
+  const percentageOfMax = max > 0 ? (earned / max) * 100 : 0
+  const sectionScore = scoreTotal > 0 ? (earned / scoreTotal) * 100 : 0
+  return { pointsEarned: earned, pointsMax: max, pointsMeta, percentageOfMax, sectionScore }
 }
 
 // ---------------------------------------------------------------------------
@@ -141,15 +168,26 @@ export function EvaluationPageV2() {
   // ---- Section nav items for sidebar/mobile --------------------------------
   const sectionNavItems = useMemo(
     () =>
-      sectionData.map((sec) => ({
-        title: sec.title,
-        color: sec.color,
-        answeredCount: sec.questions.filter((q) => answers[q.id]?.answer).length,
-        totalCount: sec.questions.length,
-        status: getSectionStatus(answers, sec.questions),
-      })),
-    [sectionData, answers],
+      sectionData.map((sec) => {
+        const points = computeSectionPoints(sec.questions, answers, meta)
+        return {
+          title: sec.title,
+          color: sec.color,
+          answeredCount: sec.questions.filter((q) => answers[q.id]?.answer).length,
+          totalCount: sec.questions.length,
+          status: getSectionStatus(answers, sec.questions),
+          pointsEarned: points.pointsEarned,
+          pointsMax: points.pointsMax,
+          pointsMeta: points.pointsMeta,
+          percentageOfMax: points.percentageOfMax,
+          sectionScore: points.sectionScore,
+        }
+      }),
+    [sectionData, answers, meta],
   )
+
+  // ---- Global pointsMeta (derived from pointsBreakdown) --------------------
+  const pointsMeta = pointsBreakdown.max * (meta / 100)
 
   // ---- Callbacks -----------------------------------------------------------
 
@@ -246,23 +284,27 @@ export function EvaluationPageV2() {
             />
           </div>
 
-          {/* Right: Glassmorphism Sidebar (desktop) */}
-          <EvalSidebar
-            className="hidden lg:block w-80 flex-shrink-0"
-            score={score}
-            meta={meta}
-            progress={progress}
-            answeredCount={answeredCount}
-            totalQuestions={totalQuestions}
-            presentMembers={presentMembers}
-            teamMembers={group.team}
-            evalType={evalType as 'audit' | 'followup'}
-            eligibility={eligibility}
-            sections={sectionNavItems}
-            canFinalize={canFinalize}
-            onScrollToSection={scrollToSection}
-            onFinalize={handleFinalize}
-          />
+          {/* Right: Sidebar (desktop) */}
+          <EvalSidebarVariants
+              variant="S5"
+              className="hidden lg:block w-80 flex-shrink-0"
+              score={score}
+              meta={meta}
+              progress={progress}
+              answeredCount={answeredCount}
+              totalQuestions={totalQuestions}
+              presentMembers={presentMembers}
+              teamMembers={group.team}
+              evalType={evalType as 'audit' | 'followup'}
+              eligibility={eligibility}
+              sections={sectionNavItems}
+              pointsBreakdown={pointsBreakdown}
+              pointsMeta={pointsMeta}
+              questionAnswers={questions.map((q) => answers[q.id]?.answer ?? null)}
+              canFinalize={canFinalize}
+              onScrollToSection={scrollToSection}
+              onFinalize={handleFinalize}
+            />
         </div>
 
         {/* ================================================================
