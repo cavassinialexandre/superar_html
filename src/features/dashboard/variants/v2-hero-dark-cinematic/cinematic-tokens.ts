@@ -1,0 +1,53 @@
+export const cinematic = {
+  hero: {
+    bg: 'linear-gradient(135deg, #071D1B 0%, #103734 48%, #155F59 100%)',
+    bgInner: 'radial-gradient(ellipse 60% 80% at 50% 110%, rgba(94, 164, 72, 0.22) 0%, transparent 60%)',
+    spotlight: 'radial-gradient(ellipse 320px 380px at 50% 80%, rgba(255,255,255,0.07) 0%, transparent 70%)',
+    glassBg: 'rgba(255, 255, 255, 0.06)',
+    glassBgStrong: 'rgba(255, 255, 255, 0.10)',
+    glassBorder: 'rgba(255, 255, 255, 0.12)',
+    glassBorderStrong: 'rgba(255, 255, 255, 0.18)',
+  },
+  body: {
+    bg: 'linear-gradient(180deg, #FAFCFB 0%, #F1F5F4 100%)',
+    cardBg: '#FFFFFF',
+    cardBorder: 'rgba(228, 232, 232, 0.7)',
+    accentBar: 'linear-gradient(90deg, #103734 0%, #1E7A73 55%, #3AA39C 100%)',
+  },
+  accents: {
+    crownGold: '#DDDD03',
+    crownAura: 'rgba(221, 221, 3, 0.35)',
+    mint: '#3AA39C',
+    lime: '#5EA448',
+    teal: '#1E7A73',
+    deepTeal: '#103734',
+    rose: '#CE3C5A',
+    amberSoft: 'rgba(221, 221, 3, 0.18)',
+  },
+  text: {
+    onDark: '#FFFFFF',
+    onDarkMuted: 'rgba(255, 255, 255, 0.62)',
+    onDarkSubtle: 'rgba(255, 255, 255, 0.42)',
+    onLight: '#0E1413',
+    onLightMuted: '#576160',
+    onLightSubtle: '#7A8584',
+  },
+  shadow: {
+    podiumFirst: '0 0 80px rgba(221, 221, 3, 0.22), 0 30px 60px -20px rgba(0,0,0,0.5)',
+    podiumSide: '0 20px 50px -20px rgba(0,0,0,0.5)',
+    satellite: '0 14px 30px -14px rgba(0,0,0,0.4)',
+    kpiCard: '0 6px 24px -10px rgba(16, 55, 52, 0.12)',
+    kpiCardHover: '0 24px 48px -16px rgba(16, 55, 52, 0.22)',
+    chartCard: '0 4px 20px -8px rgba(16, 55, 52, 0.08)',
+  },
+  motion: {
+    podiumStagger: 0.085,
+    podiumEntrance: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+    kpiHover: { duration: 0.3, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+    bodyEntrance: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  },
+  font: {
+    display: '"Plus Jakarta Sans", system-ui, sans-serif',
+    mono: '"JetBrains Mono", "SF Mono", Menlo, monospace',
+  },
+} as const

@@ -54,11 +54,11 @@ export function Sidebar() {
   }
 
   const currentAdminTab = location.pathname.startsWith('/admin')
-    ? new URLSearchParams(location.search).get('tab') || 'users'
+    ? new URLSearchParams(window.location.hash.split('?')[1] || '').get('tab') || 'users'
     : null
 
   const currentGroupType = location.pathname === '/groups'
-    ? new URLSearchParams(location.search).get('type')
+    ? new URLSearchParams(window.location.hash.split('?')[1] || '').get('type')
     : null
 
   const activeGroupTypes = groupTypes.filter(t => t.status === 'active')

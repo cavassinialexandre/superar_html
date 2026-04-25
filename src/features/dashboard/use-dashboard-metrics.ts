@@ -87,8 +87,8 @@ export function useDashboardMetrics(): DashboardMetrics {
     const sortedByScore = [...groups]
       .filter((g) => g.lastAuditScore !== undefined)
       .sort((a, b) => (b.lastAuditScore ?? 0) - (a.lastAuditScore ?? 0))
-    const topGroups = sortedByScore.slice(0, 5)
-    const bottomGroups = [...sortedByScore].reverse().slice(0, 5)
+    const topGroups = sortedByScore.slice(0, 6)
+    const bottomGroups = [...sortedByScore].reverse().slice(0, 6)
 
     // Recent activity
     const recentActivity = [...evaluations]

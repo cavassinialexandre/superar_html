@@ -120,7 +120,7 @@ export function GroupsPage() {
   const [viewMode, setViewMode] = useState<ViewMode>('cards')
   const [geralLayout, setGeralLayout] = useState<GeralLayout>('accordion')
 
-  const searchType = new URLSearchParams(location.search).get('type') || ''
+  const searchType = new URLSearchParams(window.location.hash.split('?')[1] || '').get('type') || ''
   const isGeralView = !searchType
 
   const filteredAreas = filterMgmt

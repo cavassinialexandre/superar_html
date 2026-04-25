@@ -1,0 +1,425 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e8]
+          - generic [ref=e12]:
+            - heading "Superar Digital" [level=1] [ref=e13]
+            - paragraph [ref=e14]: KAIZEN/TPM 4.0
+        - paragraph [ref=e16]: Menu
+        - navigation [ref=e17]:
+          - button "Dashboard" [ref=e18] [cursor=pointer]:
+            - img [ref=e21]
+            - generic [ref=e26]: Dashboard
+          - button "Histórico" [ref=e27] [cursor=pointer]:
+            - img [ref=e29]
+            - generic [ref=e32]: Histórico
+          - paragraph [ref=e34]: Grupos
+          - generic [ref=e35]:
+            - button "Geral" [ref=e36] [cursor=pointer]:
+              - img [ref=e38]
+              - generic [ref=e43]: Geral
+            - button "Operacional" [ref=e44] [cursor=pointer]:
+              - img [ref=e46]
+              - generic [ref=e51]: Operacional
+            - button "Administrativo" [ref=e52] [cursor=pointer]:
+              - img [ref=e54]
+              - generic [ref=e59]: Administrativo
+            - button "5S" [ref=e60] [cursor=pointer]:
+              - img [ref=e62]
+              - generic [ref=e67]: 5S
+          - paragraph [ref=e69]: Administração
+          - generic [ref=e70]:
+            - button "Usuários" [ref=e71] [cursor=pointer]:
+              - img [ref=e73]
+              - generic [ref=e76]: Usuários
+            - button "Gerências e Áreas" [ref=e77] [cursor=pointer]:
+              - img [ref=e79]
+              - generic [ref=e81]: Gerências e Áreas
+            - button "Tipos de Grupo" [ref=e82] [cursor=pointer]:
+              - img [ref=e84]
+              - generic [ref=e89]: Tipos de Grupo
+            - button "Checklists" [ref=e90] [cursor=pointer]:
+              - img [ref=e92]
+              - generic [ref=e96]: Checklists
+            - button "Grupos" [ref=e97] [cursor=pointer]:
+              - img [ref=e99]
+              - generic [ref=e104]: Grupos
+        - generic [ref=e107]:
+          - generic [ref=e109]: CS
+          - generic [ref=e110]:
+            - paragraph [ref=e111]: Carlos Silva
+            - button "Puma" [ref=e112] [cursor=pointer]:
+              - img [ref=e113]
+              - generic [ref=e115]: Puma
+              - img [ref=e116]
+    - button [ref=e121] [cursor=pointer]:
+      - img [ref=e122]
+    - main [ref=e125]:
+      - generic [ref=e140]:
+        - generic [ref=e141]:
+          - img
+          - generic [ref=e144]:
+            - generic [ref=e145]:
+              - generic [ref=e146]: OS CINCO NO TOPO
+              - generic [ref=e148]: TOP 5
+            - generic [ref=e149]:
+              - heading "Ranking Executivo" [level=2] [ref=e150]
+              - generic [ref=e153]: Unidade Puma
+            - paragraph [ref=e154]: Visão gerencial da implementação do Kaizen/TPM.
+            - generic [ref=e157]:
+              - generic [ref=e158]:
+                - generic [ref=e159]:
+                  - img [ref=e161]
+                  - generic [ref=e163]:
+                    - generic [ref=e164]: 2º LUGAR
+                    - generic [ref=e165]:
+                      - img [ref=e166]
+                      - generic [ref=e169]:
+                        - generic [ref=e170]: "87"
+                        - generic [ref=e171]: "%"
+                    - generic [ref=e172]:
+                      - generic "Equipe Alpha" [ref=e173]: Alpha
+                      - generic "Gerência de Produção" [ref=e174]: Produção
+                      - generic "Operacional" [ref=e175]
+                - generic [ref=e177]:
+                  - img [ref=e179]
+                  - generic [ref=e181]:
+                    - generic [ref=e182]: 1º LUGAR
+                    - generic [ref=e183]:
+                      - img [ref=e184]
+                      - generic [ref=e187]:
+                        - generic [ref=e188]: "93"
+                        - generic [ref=e189]: "%"
+                    - generic [ref=e190]:
+                      - generic "Equipe Delta" [ref=e191]: Delta
+                      - generic "Gerência de Manutenção" [ref=e192]: Manutenção
+                      - generic "5S" [ref=e193]
+                - generic [ref=e195]:
+                  - img [ref=e197]
+                  - generic [ref=e199]:
+                    - generic [ref=e200]: 3º LUGAR
+                    - generic [ref=e201]:
+                      - img [ref=e202]
+                      - generic [ref=e205]:
+                        - generic [ref=e206]: "82"
+                        - generic [ref=e207]: "%"
+                    - generic [ref=e208]:
+                      - generic "Equipe Eta" [ref=e209]: Eta
+                      - generic "Gerência Administrativa" [ref=e210]: Administrativa
+                      - generic "Administrativo" [ref=e211]
+              - generic [ref=e213]:
+                - generic [ref=e214]:
+                  - generic [ref=e215]: 4º
+                  - generic [ref=e216]:
+                    - generic "Equipe Zeta" [ref=e217]: Zeta
+                    - generic "Gerência de Qualidade" [ref=e218]: Qualidade
+                    - generic "5S" [ref=e219]
+                  - generic [ref=e221]: 78%
+                - generic [ref=e222]:
+                  - generic [ref=e223]: 5º
+                  - generic [ref=e224]:
+                    - generic "Equipe Beta" [ref=e225]: Beta
+                    - generic "Gerência de Produção" [ref=e226]: Produção
+                    - generic "Operacional" [ref=e227]
+                  - generic [ref=e229]: 72%
+        - generic [ref=e230]:
+          - generic [ref=e231]:
+            - generic:
+              - img
+              - generic:
+                - img
+            - generic [ref=e232]:
+              - heading "Grupo ativo" [level=3] [ref=e233]
+              - generic [ref=e234]: "7"
+          - generic [ref=e235]:
+            - generic:
+              - img
+              - generic:
+                - img
+            - generic [ref=e236]:
+              - heading "Nota média global" [level=3] [ref=e237]
+              - generic [ref=e238]: 78%
+          - generic [ref=e239]:
+            - generic:
+              - img
+              - generic:
+                - img
+            - generic [ref=e240]:
+              - heading "Acima da meta" [level=3] [ref=e241]
+              - generic [ref=e242]: 57%
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - generic [ref=e245]:
+              - heading "Notas por tipo" [level=3] [ref=e246]
+              - paragraph [ref=e247]: Média mensal por categoria de grupo.
+            - application [ref=e250]:
+              - generic [ref=e988]:
+                - generic [ref=e991]: "76"
+                - generic [ref=e994]: "72"
+                - generic [ref=e997]: "55"
+                - generic [ref=e1000]: "80"
+                - generic [ref=e1003]: "69"
+                - generic [ref=e1006]: "66"
+                - generic [ref=e1009]: "82"
+                - generic [ref=e1012]: "69"
+                - generic [ref=e1015]: "63"
+                - generic [ref=e1018]: "84"
+                - generic [ref=e1021]: "71"
+                - generic [ref=e1024]: "66"
+                - generic [ref=e1027]: "85"
+                - generic [ref=e1030]: "78"
+                - generic [ref=e1033]: "70"
+                - generic [ref=e1036]: "86"
+                - generic [ref=e1039]: "82"
+                - generic [ref=e1042]: "80"
+              - generic [ref=e295]:
+                - generic [ref=e296]:
+                  - generic [ref=e298]: Out
+                  - generic [ref=e903]: Nov
+                  - generic [ref=e905]: Dez
+                  - generic [ref=e907]: Jan
+                  - generic [ref=e909]: Fev
+                  - generic [ref=e911]: Mar
+                - generic [ref=e309]:
+                  - generic [ref=e311]: "0"
+                  - generic [ref=e313]: "25"
+                  - generic [ref=e315]: "50"
+                  - generic [ref=e317]: "75"
+                  - generic [ref=e319]: "100"
+            - generic [ref=e320]:
+              - generic [ref=e323]: Operacional
+              - generic [ref=e326]: Administrativo
+              - generic [ref=e329]: 5S
+          - generic [ref=e330]:
+            - generic [ref=e331]:
+              - heading "Por tipo" [level=3] [ref=e332]
+              - paragraph [ref=e333]: Composição operacional.
+            - generic [ref=e334]:
+              - application [ref=e337]
+              - generic:
+                - generic: "7"
+                - generic: grupos
+            - generic [ref=e350]:
+              - generic [ref=e351]:
+                - generic [ref=e353]: Operacional
+                - generic [ref=e354]: 43%
+                - generic [ref=e355]: "3"
+              - generic [ref=e356]:
+                - generic [ref=e358]: Administrativo
+                - generic [ref=e359]: 29%
+                - generic [ref=e360]: "2"
+              - generic [ref=e361]:
+                - generic [ref=e363]: 5S
+                - generic [ref=e364]: 29%
+                - generic [ref=e365]: "2"
+          - generic [ref=e366]:
+            - generic [ref=e367]:
+              - heading "Nota por gerência" [level=3] [ref=e368]
+              - paragraph [ref=e369]: Última auditoria.
+            - application [ref=e372]:
+              - generic [ref=e392]:
+                - generic [ref=e393]:
+                  - generic [ref=e395]: "0"
+                  - generic [ref=e936]: "25"
+                  - generic [ref=e938]: "50"
+                  - generic [ref=e940]: "75"
+                  - generic [ref=e942]: "100"
+                - generic [ref=e404]:
+                  - generic [ref=e406]: Gerência deProdução
+                  - generic [ref=e408]: Gerência deQualidade
+                  - generic [ref=e410]: GerênciaAdministrativa
+                  - generic [ref=e412]: Gerência deManutenção
+          - generic [ref=e413]:
+            - generic [ref=e414]:
+              - heading "Por sequência" [level=3] [ref=e415]
+              - paragraph [ref=e416]: Jornada Kaizen.
+            - application [ref=e419]:
+              - generic [ref=e439]:
+                - generic [ref=e440]:
+                  - generic [ref=e957]: Passo 1
+                  - generic [ref=e959]: Passo 2
+                  - generic [ref=e961]: Passo 3
+                  - generic [ref=e963]: Passo 4
+                - generic [ref=e449]:
+                  - generic [ref=e451]: "0"
+                  - generic [ref=e453]: "1"
+                  - generic [ref=e455]: "2"
+                  - generic [ref=e457]: "3"
+                  - generic [ref=e459]: "4"
+          - generic [ref=e460]:
+            - generic [ref=e461]:
+              - heading "Abaixo da meta" [level=3] [ref=e462]
+              - paragraph [ref=e463]: Agende um follow-up para acompanhamento próximo.
+            - generic [ref=e464]:
+              - generic [ref=e465]:
+                - generic [ref=e466]: "01"
+                - img [ref=e468]
+                - generic [ref=e470]:
+                  - generic [ref=e471]: Equipe Epsilon
+                  - generic [ref=e472]: Gerência de Manutenção
+                - generic [ref=e473]: 45%
+              - generic [ref=e474]:
+                - generic [ref=e475]: "02"
+                - img [ref=e477]
+                - generic [ref=e479]:
+                  - generic [ref=e480]: Equipe Gamma
+                  - generic [ref=e481]: Gerência Administrativa
+                - generic [ref=e482]: 65%
+              - generic [ref=e483]:
+                - generic [ref=e484]: "03"
+                - img [ref=e486]
+                - generic [ref=e488]:
+                  - generic [ref=e489]: Equipe Beta
+                  - generic [ref=e490]: Gerência de Produção
+                - generic [ref=e491]: 72%
+          - generic [ref=e492]:
+            - generic [ref=e493]:
+              - heading "Últimas avaliações" [level=3] [ref=e494]
+              - paragraph [ref=e495]: Auditorias e follow-ups recentes.
+            - generic [ref=e496]:
+              - generic [ref=e497]:
+                - generic [ref=e498]: Avaliação
+                - generic [ref=e499]: Tipo
+                - generic [ref=e500]: Avaliado por
+                - generic [ref=e501]: Resultado
+              - generic [ref=e502]:
+                - img [ref=e504]
+                - generic [ref=e508]:
+                  - generic [ref=e509]:
+                    - generic [ref=e510]: Equipe Eta
+                    - generic [ref=e511]: AUDITORIA
+                  - generic [ref=e512]:
+                    - generic [ref=e513]: Gerência Administrativa
+                    - generic [ref=e514]: ·
+                    - generic [ref=e515]: Escritório Central
+                - generic "Administrativo" [ref=e516]
+                - generic [ref=e517]:
+                  - generic "Carlos Silva" [ref=e518]: por Carlos Silva
+                  - generic [ref=e519]: 14 de mar
+                - generic [ref=e520]:
+                  - generic [ref=e521]:
+                    - generic [ref=e522]: 0 pts
+                    - generic [ref=e523]: 82%
+                  - generic [ref=e527]:
+                    - generic [ref=e528]: 0 pts
+                    - generic [ref=e529]: 75%
+                - button "Abrir auditoria" [ref=e530] [cursor=pointer]:
+                  - img [ref=e531]
+              - generic [ref=e533]:
+                - img [ref=e535]
+                - generic [ref=e539]:
+                  - generic [ref=e540]:
+                    - generic [ref=e541]: Equipe Delta
+                    - generic [ref=e542]: AUDITORIA
+                  - generic [ref=e543]:
+                    - generic [ref=e544]: Gerência de Manutenção
+                    - generic [ref=e545]: ·
+                    - generic [ref=e546]: Oficina Central
+                - generic "5S" [ref=e547]
+                - generic [ref=e548]:
+                  - generic "Ana Oliveira" [ref=e549]: por Ana Oliveira
+                  - generic [ref=e550]: 12 de mar
+                - generic [ref=e551]:
+                  - generic [ref=e552]:
+                    - generic [ref=e553]: 0 pts
+                    - generic [ref=e554]: 93%
+                  - generic [ref=e558]:
+                    - generic [ref=e559]: 0 pts
+                    - generic [ref=e560]: 85%
+                - button "Abrir auditoria" [ref=e561] [cursor=pointer]:
+                  - img [ref=e562]
+              - generic [ref=e564]:
+                - img [ref=e566]
+                - generic [ref=e570]:
+                  - generic [ref=e571]:
+                    - generic [ref=e572]: Equipe Alpha
+                    - generic [ref=e573]: AUDITORIA
+                  - generic [ref=e574]:
+                    - generic [ref=e575]: Gerência de Produção
+                    - generic [ref=e576]: ·
+                    - generic [ref=e577]: Linha de Montagem A
+                - generic "Operacional" [ref=e578]
+                - generic [ref=e579]:
+                  - generic "Carlos Silva" [ref=e580]: por Carlos Silva
+                  - generic [ref=e581]: 10 de mar
+                - generic [ref=e582]:
+                  - generic [ref=e583]:
+                    - generic [ref=e584]: 80 pts
+                    - generic [ref=e585]: 87%
+                  - generic [ref=e589]:
+                    - generic [ref=e590]: 85 pts
+                    - generic [ref=e591]: 85%
+                - button "Abrir auditoria" [ref=e592] [cursor=pointer]:
+                  - img [ref=e593]
+              - generic [ref=e595]:
+                - img [ref=e597]
+                - generic [ref=e601]:
+                  - generic [ref=e602]:
+                    - generic [ref=e603]: Equipe Zeta
+                    - generic [ref=e604]: AUDITORIA
+                  - generic [ref=e605]:
+                    - generic [ref=e606]: Gerência de Qualidade
+                    - generic [ref=e607]: ·
+                    - generic [ref=e608]: Laboratório
+                - generic "5S" [ref=e609]
+                - generic [ref=e610]:
+                  - generic "Carlos Silva" [ref=e611]: por Carlos Silva
+                  - generic [ref=e612]: 8 de mar
+                - generic [ref=e613]:
+                  - generic [ref=e614]:
+                    - generic [ref=e615]: 0 pts
+                    - generic [ref=e616]: 78%
+                  - generic [ref=e620]:
+                    - generic [ref=e621]: 0 pts
+                    - generic [ref=e622]: 70%
+                - button "Abrir auditoria" [ref=e623] [cursor=pointer]:
+                  - img [ref=e624]
+              - generic [ref=e626]:
+                - img [ref=e628]
+                - generic [ref=e632]:
+                  - generic [ref=e633]:
+                    - generic [ref=e634]: Equipe Beta
+                    - generic [ref=e635]: AUDITORIA
+                  - generic [ref=e636]:
+                    - generic [ref=e637]: Gerência de Produção
+                    - generic [ref=e638]: ·
+                    - generic [ref=e639]: Linha de Montagem B
+                - generic "Operacional" [ref=e640]
+                - generic [ref=e641]:
+                  - generic "Carlos Silva" [ref=e642]: por Carlos Silva
+                  - generic [ref=e643]: 5 de mar
+                - generic [ref=e644]:
+                  - generic [ref=e645]:
+                    - generic [ref=e646]: 0 pts
+                    - generic [ref=e647]: 72%
+                  - generic [ref=e651]:
+                    - generic [ref=e652]: 0 pts
+                    - generic [ref=e653]: 80%
+                - button "Abrir auditoria" [ref=e654] [cursor=pointer]:
+                  - img [ref=e655]
+              - generic [ref=e657]:
+                - img [ref=e659]
+                - generic [ref=e662]:
+                  - generic [ref=e663]:
+                    - generic [ref=e664]: Equipe Alpha
+                    - generic [ref=e665]: FOLLOW-UP
+                  - generic [ref=e666]:
+                    - generic [ref=e667]: Gerência de Produção
+                    - generic [ref=e668]: ·
+                    - generic [ref=e669]: Linha de Montagem A
+                - generic "Operacional" [ref=e670]
+                - generic [ref=e671]:
+                  - generic "Ana Oliveira" [ref=e672]: por Ana Oliveira
+                  - generic [ref=e673]: 1 de mar
+                - generic [ref=e674]:
+                  - generic [ref=e675]:
+                    - generic [ref=e676]: 0 pts
+                    - generic [ref=e677]: 82%
+                  - generic [ref=e681]:
+                    - generic [ref=e682]: 0 pts
+                    - generic [ref=e683]: 85%
+                - button "Abrir auditoria" [ref=e684] [cursor=pointer]:
+                  - img [ref=e685]
+  - generic [ref=e687]: "1"

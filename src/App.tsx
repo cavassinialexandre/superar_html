@@ -93,7 +93,26 @@ const historyRoute = createRoute({
   path: '/history',
   component: HistoryPage,
   validateSearch: (search: Record<string, unknown>) => ({
+    v: (search.v as string) || 'timeline-classica',
+    search: (search.search as string) || '',
+    type: (search.type as string) || 'all',
     groupId: (search.groupId as string) || '',
+    managementId: (search.managementId as string) || '',
+    areaId: (search.areaId as string) || '',
+    groupTypeName: (search.groupTypeName as string) || '',
+    applicantId: (search.applicantId as string) || '',
+    checklistRevision: search.checklistRevision != null && search.checklistRevision !== ''
+      ? Number(search.checklistRevision)
+      : null,
+    dateFrom: (search.dateFrom as string) || null,
+    dateTo: (search.dateTo as string) || null,
+    scoreMin: search.scoreMin != null ? Number(search.scoreMin) : 0,
+    scoreMax: search.scoreMax != null ? Number(search.scoreMax) : 100,
+    advanced: (search.advanced as string) || 'all',
+    sort: (search.sort as string) || 'date-desc',
+    preset: (search.preset as string) || null,
+    selectedEvalId: (search.selectedEvalId as string) || '',
+    drawerTab: (search.drawerTab as string) || 'summary',
   }),
 })
 

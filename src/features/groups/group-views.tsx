@@ -39,7 +39,7 @@ export function GroupActions({ group }: { group: Group }) {
         <FollowupIcon size={16} />
       </button>
       <button
-        onClick={(e) => { e.stopPropagation(); navigate({ to: '/history', search: { groupId: group.id } }) }}
+        onClick={(e) => { e.stopPropagation(); navigate({ to: '/history', search: ((prev: Record<string, unknown>) => ({ ...prev, groupId: group.id })) as never }) }}
         className="p-1.5 rounded-md text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-all cursor-pointer"
         title="Ver Histórico"
       >

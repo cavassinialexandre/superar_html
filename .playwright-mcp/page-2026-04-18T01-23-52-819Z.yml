@@ -1,0 +1,42 @@
+- generic [ref=e10]:
+  - generic [ref=e11]:
+    - img [ref=e13]
+    - heading "Superar Digital" [level=1] [ref=e17]
+    - paragraph [ref=e18]: Gestão Kaizen/TPM 4.0
+  - generic [ref=e19]:
+    - button "Puma 6 Áreas 3 Tipos Grupos 7 Grupos Acessar unidade" [ref=e20] [cursor=pointer]:
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - img [ref=e26]
+          - heading "Puma" [level=2] [ref=e28]
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - paragraph [ref=e31]: "6"
+            - paragraph [ref=e32]: Áreas
+          - generic [ref=e33]:
+            - paragraph [ref=e34]: "3"
+            - paragraph [ref=e35]: Tipos Grupos
+          - generic [ref=e36]:
+            - paragraph [ref=e37]: "7"
+            - paragraph [ref=e38]: Grupos
+        - generic [ref=e39]:
+          - generic [ref=e40]: Acessar unidade
+          - img [ref=e41]
+    - button "Monte Alegre 0 Áreas 0 Tipos Grupos 0 Grupos Acessar unidade" [ref=e44] [cursor=pointer]:
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - img [ref=e50]
+          - heading "Monte Alegre" [level=2] [ref=e52]
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - paragraph [ref=e55]: "0"
+            - paragraph [ref=e56]: Áreas
+          - generic [ref=e57]:
+            - paragraph [ref=e58]: "0"
+            - paragraph [ref=e59]: Tipos Grupos
+          - generic [ref=e60]:
+            - paragraph [ref=e61]: "0"
+            - paragraph [ref=e62]: Grupos
+        - generic [ref=e63]:
+          - generic [ref=e64]: Acessar unidade
+          - img [ref=e65]

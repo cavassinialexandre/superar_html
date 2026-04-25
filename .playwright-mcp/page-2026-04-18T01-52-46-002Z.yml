@@ -1,0 +1,97 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e8]
+          - generic [ref=e12]:
+            - heading "Superar Digital" [level=1] [ref=e13]
+            - paragraph [ref=e14]: KAIZEN/TPM 4.0
+        - paragraph [ref=e16]: Menu
+        - navigation [ref=e17]:
+          - button "Dashboard" [ref=e18] [cursor=pointer]:
+            - img [ref=e21]
+            - generic [ref=e26]: Dashboard
+          - button "Histórico" [ref=e27] [cursor=pointer]:
+            - img [ref=e29]
+            - generic [ref=e32]: Histórico
+          - paragraph [ref=e34]: Grupos
+          - generic [ref=e35]:
+            - button "Geral" [ref=e36] [cursor=pointer]:
+              - img [ref=e38]
+              - generic [ref=e43]: Geral
+            - button "Operacional" [ref=e44] [cursor=pointer]:
+              - img [ref=e46]
+              - generic [ref=e51]: Operacional
+            - button "Administrativo" [ref=e52] [cursor=pointer]:
+              - img [ref=e54]
+              - generic [ref=e59]: Administrativo
+            - button "5S" [ref=e60] [cursor=pointer]:
+              - img [ref=e62]
+              - generic [ref=e67]: 5S
+          - paragraph [ref=e69]: Administração
+          - generic [ref=e70]:
+            - button "Usuários" [ref=e71] [cursor=pointer]:
+              - img [ref=e73]
+              - generic [ref=e76]: Usuários
+            - button "Gerências e Áreas" [ref=e77] [cursor=pointer]:
+              - img [ref=e79]
+              - generic [ref=e81]: Gerências e Áreas
+            - button "Tipos de Grupo" [ref=e82] [cursor=pointer]:
+              - img [ref=e84]
+              - generic [ref=e89]: Tipos de Grupo
+            - button "Checklists" [ref=e90] [cursor=pointer]:
+              - img [ref=e92]
+              - generic [ref=e96]: Checklists
+            - button "Grupos" [ref=e97] [cursor=pointer]:
+              - img [ref=e99]
+              - generic [ref=e104]: Grupos
+        - generic [ref=e107]:
+          - generic [ref=e109]: CS
+          - generic [ref=e110]:
+            - paragraph [ref=e111]: Carlos Silva
+            - button "Puma" [ref=e112] [cursor=pointer]:
+              - img [ref=e113]
+              - generic [ref=e115]: Puma
+              - img [ref=e116]
+    - button [ref=e121] [cursor=pointer]:
+      - img [ref=e122]
+    - main [ref=e125]:
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - generic [ref=e132]:
+            - generic [ref=e133]: Homologação · escolha um modelo
+            - generic [ref=e134]: /6
+          - generic [ref=e135]: variante ativa preserva-se ao recarregar
+        - tablist "Variantes do dashboard" [ref=e136]:
+          - tab "Editorial LIGHT Magazine premium · serif display" [ref=e137] [cursor=pointer]:
+            - generic [ref=e138]:
+              - generic [ref=e139]: Editorial
+              - generic [ref=e140]: LIGHT
+            - generic [ref=e141]: Magazine premium · serif display
+          - tab "Cinemático HÍBRIDO Hero dark · podium glass" [ref=e142] [cursor=pointer]:
+            - generic [ref=e143]:
+              - generic [ref=e144]: Cinemático
+              - generic [ref=e145]: HÍBRIDO
+            - generic [ref=e146]: Hero dark · podium glass
+          - tab "Onyx Pro DARK Cockpit dark · neon accents" [selected] [ref=e147] [cursor=pointer]:
+            - generic [ref=e148]:
+              - generic [ref=e149]: Onyx Pro
+              - generic [ref=e150]: DARK
+            - generic [ref=e151]: Cockpit dark · neon accents
+          - tab "Bento LIGHT Tiles modulares · Apple-style" [ref=e152] [cursor=pointer]:
+            - generic [ref=e153]:
+              - generic [ref=e154]: Bento
+              - generic [ref=e155]: LIGHT
+            - generic [ref=e156]: Tiles modulares · Apple-style
+          - tab "Aurora Glass GLASS Orbital podium · luxury tech" [ref=e157] [cursor=pointer]:
+            - generic [ref=e158]:
+              - generic [ref=e159]: Aurora Glass
+              - generic [ref=e160]: GLASS
+            - generic [ref=e161]: Orbital podium · luxury tech
+          - tab "Brief LIGHT Bloomberg terminal · denso" [ref=e162] [cursor=pointer]:
+            - generic [ref=e163]:
+              - generic [ref=e164]: Brief
+              - generic [ref=e165]: LIGHT
+            - generic [ref=e166]: Bloomberg terminal · denso
+  - generic [ref=e684]: "1"
