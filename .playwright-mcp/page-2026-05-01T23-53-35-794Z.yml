@@ -1,0 +1,153 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e8]
+        - generic [ref=e12]:
+          - heading "Superar Digital" [level=1] [ref=e13]
+          - paragraph [ref=e14]: KAIZEN/TPM 4.0
+      - paragraph [ref=e16]: Menu
+      - navigation [ref=e17]:
+        - button "Dashboard" [ref=e18] [cursor=pointer]:
+          - img [ref=e20]
+          - generic [ref=e25]: Dashboard
+        - button "Histórico" [ref=e26] [cursor=pointer]:
+          - img [ref=e28]
+          - generic [ref=e31]: Histórico
+        - paragraph [ref=e33]: Grupos
+        - generic [ref=e34]:
+          - button "Geral" [ref=e35] [cursor=pointer]:
+            - img [ref=e37]
+            - generic [ref=e42]: Geral
+          - button "Operacional" [ref=e43] [cursor=pointer]:
+            - img [ref=e46]
+            - generic [ref=e51]: Operacional
+          - button "Administrativo" [ref=e52] [cursor=pointer]:
+            - img [ref=e54]
+            - generic [ref=e59]: Administrativo
+          - button "5S" [ref=e60] [cursor=pointer]:
+            - img [ref=e62]
+            - generic [ref=e67]: 5S
+        - paragraph [ref=e69]: Administração
+        - generic [ref=e70]:
+          - button "Usuários" [ref=e71] [cursor=pointer]:
+            - img [ref=e73]
+            - generic [ref=e76]: Usuários
+          - button "Gerências e Áreas" [ref=e77] [cursor=pointer]:
+            - img [ref=e79]
+            - generic [ref=e81]: Gerências e Áreas
+          - button "Tipos de Grupo" [ref=e82] [cursor=pointer]:
+            - img [ref=e84]
+            - generic [ref=e89]: Tipos de Grupo
+          - button "Checklists" [ref=e90] [cursor=pointer]:
+            - img [ref=e92]
+            - generic [ref=e96]: Checklists
+          - button "Grupos" [ref=e97] [cursor=pointer]:
+            - img [ref=e99]
+            - generic [ref=e104]: Grupos
+      - generic [ref=e107]:
+        - generic [ref=e109]: CS
+        - generic [ref=e110]:
+          - paragraph [ref=e111]: Carlos Silva
+          - button "Puma" [ref=e112] [cursor=pointer]:
+            - img [ref=e113]
+            - generic [ref=e115]: Puma
+            - img [ref=e116]
+  - button [ref=e121] [cursor=pointer]:
+    - img [ref=e122]
+  - main [ref=e125]:
+    - generic [ref=e128]:
+      - generic [ref=e129]:
+        - generic [ref=e130]:
+          - generic:
+            - img
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - paragraph [ref=e133]: GRUPOS OPERACIONAIS
+              - heading "Grupos Operacionais" [level=1] [ref=e134]
+              - paragraph [ref=e135]: Equipes Kaizen/TPM da operação — auditorias, follow-ups e evolução por sequência.
+            - generic [ref=e136]:
+              - generic [ref=e137]:
+                - paragraph [ref=e138]: Total
+                - paragraph [ref=e139]: "3"
+              - generic [ref=e141]:
+                - paragraph [ref=e142]: Tipos
+                - paragraph [ref=e143]: "1"
+              - generic [ref=e145]:
+                - paragraph [ref=e146]: Membros
+                - paragraph [ref=e147]: "25"
+        - button "Filtros Expandir Nenhum filtro ativo" [ref=e149] [cursor=pointer]:
+          - img [ref=e150]
+          - generic [ref=e152]: Filtros
+          - generic [ref=e153]: Expandir
+          - img [ref=e155]
+          - generic [ref=e157]: Nenhum filtro ativo
+      - generic [ref=e158]:
+        - generic [ref=e159]: "Filtros ativos:"
+        - generic [ref=e161]: "Tipo: Operacional"
+      - generic [ref=e162]:
+        - paragraph [ref=e163]: 3 grupos
+        - tablist "Modo de visualização" [ref=e165]:
+          - tab "Cards" [selected] [ref=e166] [cursor=pointer]:
+            - generic [ref=e168]:
+              - img [ref=e169]
+              - text: Cards
+          - tab "Tabela" [ref=e174] [cursor=pointer]:
+            - generic [ref=e175]:
+              - img [ref=e176]
+              - text: Tabela
+      - generic [ref=e179]:
+        - generic [ref=e181] [cursor=pointer]:
+          - generic [ref=e182]:
+            - generic [ref=e183]:
+              - heading "Equipe Alpha" [level=3] [ref=e184]
+              - paragraph [ref=e185]: Gerência de Produção — Linha de Montagem A
+            - generic [ref=e186]: Operacional
+          - generic [ref=e187]:
+            - generic [ref=e203]: 3/5
+            - generic [ref=e204]: 87%
+          - generic [ref=e205]:
+            - generic [ref=e206]: "Ultima: 09/03/2026"
+            - generic [ref=e207]:
+              - button "Aplicar Auditoria" [ref=e208]:
+                - img [ref=e209]
+              - button "Aplicar Follow-up" [ref=e213]:
+                - img [ref=e214]
+              - button "Ver Histórico" [ref=e217]:
+                - img [ref=e218]
+        - generic [ref=e222] [cursor=pointer]:
+          - generic [ref=e223]:
+            - generic [ref=e224]:
+              - heading "Equipe Beta" [level=3] [ref=e225]
+              - paragraph [ref=e226]: Gerência de Produção — Linha de Montagem B
+            - generic [ref=e227]: Operacional
+          - generic [ref=e228]:
+            - generic [ref=e244]: 2/5
+            - generic [ref=e245]: 72%
+          - generic [ref=e246]:
+            - generic [ref=e247]: "Ultima: 04/03/2026"
+            - generic [ref=e248]:
+              - button "Aplicar Auditoria" [ref=e249]:
+                - img [ref=e250]
+              - button "Aplicar Follow-up" [ref=e254]:
+                - img [ref=e255]
+              - button "Ver Histórico" [ref=e258]:
+                - img [ref=e259]
+        - generic [ref=e263] [cursor=pointer]:
+          - generic [ref=e264]:
+            - generic [ref=e265]:
+              - heading "Equipe Epsilon" [level=3] [ref=e266]
+              - paragraph [ref=e267]: Gerência de Manutenção — Almoxarifado
+            - generic [ref=e268]: Operacional
+          - generic [ref=e269]:
+            - generic [ref=e282]: 1/4
+            - generic [ref=e283]: 45%
+          - generic [ref=e284]:
+            - generic [ref=e285]: "Ultima: 14/01/2026"
+            - generic [ref=e286]:
+              - button "Aplicar Auditoria" [ref=e287]:
+                - img [ref=e288]
+              - button "Aplicar Follow-up" [ref=e292]:
+                - img [ref=e293]
+              - button "Ver Histórico" [ref=e296]:
+                - img [ref=e297]

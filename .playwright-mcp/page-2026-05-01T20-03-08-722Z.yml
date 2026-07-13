@@ -1,0 +1,153 @@
+- generic [ref=e3]:
+  - complementary [ref=e150]:
+    - generic [ref=e151]:
+      - img [ref=e154]
+      - navigation [ref=e163]:
+        - button [ref=e496] [cursor=pointer]:
+          - img [ref=e166]
+        - button [ref=e497] [cursor=pointer]:
+          - img [ref=e174]
+        - button [ref=e500] [cursor=pointer]:
+          - img [ref=e503]
+        - button [ref=e508] [cursor=pointer]:
+          - img [ref=e510]
+        - button [ref=e515] [cursor=pointer]:
+          - img [ref=e517]
+        - button [ref=e522] [cursor=pointer]:
+          - img [ref=e524]
+        - button [ref=e531] [cursor=pointer]:
+          - img [ref=e533]
+        - button [ref=e536] [cursor=pointer]:
+          - img [ref=e538]
+        - button [ref=e540] [cursor=pointer]:
+          - img [ref=e542]
+        - button [ref=e547] [cursor=pointer]:
+          - img [ref=e549]
+        - button [ref=e553] [cursor=pointer]:
+          - img [ref=e555]
+      - generic [ref=e253]:
+        - generic [ref=e255]: CS
+        - button "Puma" [ref=e560] [cursor=pointer]:
+          - generic [ref=e561]: Puma
+          - img [ref=e562]
+  - button [ref=e267] [cursor=pointer]:
+    - img [ref=e567]
+  - main [ref=e7]:
+    - generic [ref=e271]:
+      - generic [ref=e272]:
+        - generic [ref=e273]:
+          - generic:
+            - img
+          - generic [ref=e274]:
+            - generic [ref=e275]:
+              - navigation [ref=e276]:
+                - generic [ref=e277]: Grupos
+              - paragraph [ref=e278]: GESTÃO DE GRUPOS
+              - heading "Todos os Grupos" [level=1] [ref=e279]
+              - paragraph [ref=e280]: Visão geral de todos os grupos organizados por área da unidade.
+            - generic [ref=e281]:
+              - generic [ref=e282]:
+                - paragraph [ref=e283]: Total
+                - paragraph [ref=e284]: "1"
+              - generic [ref=e286]:
+                - paragraph [ref=e287]: Tipos
+                - paragraph [ref=e288]: "1"
+              - generic [ref=e290]:
+                - paragraph [ref=e291]: Membros
+                - paragraph [ref=e292]: "20"
+        - generic [ref=e293]:
+          - button "Filtros Fechar 1 filtro ativo" [expanded] [ref=e584] [cursor=pointer]:
+            - img [ref=e295]
+            - generic [ref=e297]: Filtros
+            - generic [ref=e585]: "1"
+            - generic [ref=e298]: Fechar
+            - img [ref=e300]
+            - generic [ref=e302]: 1 filtro ativo
+          - region "Filtros avançados" [ref=e569]:
+            - generic [ref=e570]:
+              - generic [ref=e571]:
+                - generic [ref=e572]: Buscar
+                - generic [ref=e573]:
+                  - generic:
+                    - img
+                  - textbox "Nome do grupo..." [active] [ref=e574]: Alpha
+              - generic [ref=e575]:
+                - generic [ref=e576]: Tipo de grupo
+                - combobox [ref=e577] [cursor=pointer]:
+                  - option "Todos os tipos" [selected]
+                  - option "Operacional"
+                  - option "Administrativo"
+                  - option "5S"
+              - generic [ref=e578]:
+                - generic [ref=e579]: Gerência
+                - combobox [ref=e580] [cursor=pointer]:
+                  - option "Todas as gerências" [selected]
+                  - option "Gerência de Produção"
+                  - option "Gerência de Manutenção"
+                  - option "Gerência de Qualidade"
+                  - option "Gerência Administrativa"
+              - generic [ref=e581]:
+                - generic [ref=e582]: Área
+                - combobox [disabled] [ref=e583]:
+                  - option "Selecione gerência primeiro" [selected]
+                  - option "Linha de Montagem A"
+                  - option "Linha de Montagem B"
+                  - option "Oficina Central"
+                  - option "Laboratório"
+                  - option "Escritório Central"
+                  - option "Almoxarifado"
+      - generic [ref=e587]:
+        - generic [ref=e588]: "Filtros ativos:"
+        - 'button "Remover filtro Busca: \"Alpha\"" [ref=e589] [cursor=pointer]':
+          - generic [ref=e590]: "Busca: \"Alpha\""
+          - img [ref=e591]
+      - generic [ref=e303]:
+        - paragraph [ref=e304]: 1 grupos em 1 áreas
+        - tablist "Layout de visão geral" [ref=e306]:
+          - tab "Accordion" [selected] [ref=e307] [cursor=pointer]:
+            - generic [ref=e309]:
+              - img [ref=e310]
+              - text: Accordion
+          - tab "Kanban" [ref=e311] [cursor=pointer]:
+            - generic [ref=e312]:
+              - img [ref=e313]
+              - text: Kanban
+          - tab "Timeline" [ref=e317] [cursor=pointer]:
+            - generic [ref=e318]:
+              - img [ref=e319]
+              - text: Timeline
+      - generic [ref=e413]:
+        - button "Linha de Montagem A 1 Gerência de Produção 1 grupos 20 membros 87%" [ref=e414] [cursor=pointer]:
+          - img [ref=e416]
+          - generic [ref=e418]:
+            - generic [ref=e419]:
+              - heading "Linha de Montagem A" [level=3] [ref=e420]
+              - generic [ref=e421]: "1"
+            - paragraph [ref=e422]: Gerência de Produção
+          - generic [ref=e423]:
+            - generic [ref=e424]:
+              - img [ref=e425]
+              - generic [ref=e430]: 1 grupos
+            - generic [ref=e431]:
+              - img [ref=e432]
+              - generic [ref=e435]: 20 membros
+            - generic [ref=e436]: 87%
+          - img [ref=e438]
+        - generic [ref=e598] [cursor=pointer]:
+          - generic [ref=e599]:
+            - generic [ref=e600]:
+              - heading "Equipe Alpha" [level=3] [ref=e601]
+              - paragraph [ref=e602]: Gerência de Produção — Linha de Montagem A
+            - generic [ref=e603]: Operacional
+          - generic [ref=e604]:
+            - generic [ref=e620]: 3/5
+            - generic [ref=e621]: 87%
+          - generic [ref=e622]:
+            - generic [ref=e623]: "Ultima: 09/03/2026"
+            - generic [ref=e624]:
+              - button "Aplicar Auditoria" [ref=e625]:
+                - img [ref=e626]
+              - button "Aplicar Follow-up" [ref=e630]:
+                - img [ref=e631]
+              - button "Ver Histórico" [ref=e634]:
+                - img [ref=e635]

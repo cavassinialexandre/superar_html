@@ -1,0 +1,78 @@
+- generic [ref=e124]:
+  - button [ref=e701] [cursor=pointer]:
+    - img [ref=e702]
+  - main [ref=e125]:
+    - generic [ref=e128]:
+      - generic [ref=e129]:
+        - generic:
+          - img
+        - generic [ref=e130]:
+          - generic [ref=e131]:
+            - navigation [ref=e132]:
+              - generic [ref=e133]: Grupos
+            - paragraph [ref=e134]: GESTÃO DE GRUPOS
+            - heading "Todos os Grupos" [level=1] [ref=e703]
+            - paragraph [ref=e136]: Visão geral de todos os grupos organizados por área da unidade.
+          - generic [ref=e137]:
+            - generic [ref=e138]:
+              - paragraph [ref=e139]: Total
+              - paragraph [ref=e140]: "7"
+            - generic [ref=e142]:
+              - paragraph [ref=e143]: Tipos
+              - paragraph [ref=e144]: "3"
+            - generic [ref=e146]:
+              - paragraph [ref=e147]: Membros
+              - paragraph [ref=e148]: "38"
+      - generic [ref=e149]:
+        - generic [ref=e151]:
+          - generic:
+            - img
+          - textbox "Buscar grupo..." [ref=e152]
+        - generic [ref=e153]:
+          - button "Filtros" [ref=e154] [cursor=pointer]:
+            - img [ref=e155]
+          - generic [ref=e704]:
+            - button "Accordion" [ref=e705] [cursor=pointer]:
+              - generic [ref=e707]: Accordion
+            - button "Kanban" [ref=e708] [cursor=pointer]:
+              - generic [ref=e709]: Kanban
+            - button "Timeline" [ref=e710] [cursor=pointer]:
+              - generic [ref=e711]: Timeline
+      - paragraph [ref=e166]: 7 grupos em 6 áreas
+      - generic [ref=e358]:
+        - generic [ref=e632] [cursor=pointer]:
+          - generic [ref=e633]:
+            - generic [ref=e634]:
+              - heading "Equipe Gamma" [level=3] [ref=e635]
+              - paragraph [ref=e636]: Gerência Administrativa — Escritório Central
+            - generic [ref=e637]: Administrativo
+          - generic [ref=e638]:
+            - generic [ref=e648]: 1/3
+            - generic [ref=e649]: 65%
+          - generic [ref=e650]:
+            - generic [ref=e651]: "Ultima: 27/02/2026"
+            - generic [ref=e652]:
+              - button "Aplicar Auditoria" [ref=e653]:
+                - img [ref=e654]
+              - button "Aplicar Follow-up" [ref=e658]:
+                - img [ref=e659]
+              - button "Ver Histórico" [ref=e662]:
+                - img [ref=e663]
+        - generic [ref=e667] [cursor=pointer]:
+          - generic [ref=e668]:
+            - generic [ref=e669]:
+              - heading "Equipe Eta" [level=3] [ref=e670]
+              - paragraph [ref=e671]: Gerência Administrativa — Escritório Central
+            - generic [ref=e672]: Administrativo
+          - generic [ref=e673]:
+            - generic [ref=e683]: 2/3
+            - generic [ref=e684]: 82%
+          - generic [ref=e685]:
+            - generic [ref=e686]: "Ultima: 13/03/2026"
+            - generic [ref=e687]:
+              - button "Aplicar Auditoria" [ref=e688]:
+                - img [ref=e689]
+              - button "Aplicar Follow-up" [ref=e693]:
+                - img [ref=e694]
+              - button "Ver Histórico" [ref=e697]:
+                - img [ref=e698]

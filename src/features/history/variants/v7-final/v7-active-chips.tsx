@@ -64,7 +64,7 @@ export function V7ActiveChips({ api, lockedKeys = [], onClearAll }: V7ActiveChip
           )
         })}
       </AnimatePresence>
-      {removableCount > 1 && (
+      {removableCount >= 1 && (
         <button
           onClick={onClearAll ?? clearAll}
           className="text-[11px] font-medium text-gray-500 hover:text-gray-800 underline underline-offset-2 cursor-pointer ml-1"

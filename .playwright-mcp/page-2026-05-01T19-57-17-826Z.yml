@@ -1,0 +1,134 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - img [ref=e8]
+        - generic [ref=e12]:
+          - heading "Superar Digital" [level=1] [ref=e13]
+          - paragraph [ref=e14]: KAIZEN/TPM 4.0
+      - paragraph [ref=e16]: Menu
+      - navigation [ref=e17]:
+        - button "Dashboard" [ref=e18] [cursor=pointer]:
+          - img [ref=e20]
+          - generic [ref=e25]: Dashboard
+        - button "Histórico" [ref=e26] [cursor=pointer]:
+          - img [ref=e28]
+          - generic [ref=e31]: Histórico
+        - paragraph [ref=e33]: Grupos
+        - generic [ref=e34]:
+          - button "Geral" [ref=e35] [cursor=pointer]:
+            - img [ref=e38]
+            - generic [ref=e43]: Geral
+          - button "Operacional" [ref=e44] [cursor=pointer]:
+            - img [ref=e46]
+            - generic [ref=e51]: Operacional
+          - button "Administrativo" [active] [ref=e52] [cursor=pointer]:
+            - img [ref=e54]
+            - generic [ref=e59]: Administrativo
+          - button "5S" [ref=e60] [cursor=pointer]:
+            - img [ref=e62]
+            - generic [ref=e67]: 5S
+        - paragraph [ref=e69]: Administração
+        - generic [ref=e70]:
+          - button "Usuários" [ref=e71] [cursor=pointer]:
+            - img [ref=e73]
+            - generic [ref=e76]: Usuários
+          - button "Gerências e Áreas" [ref=e77] [cursor=pointer]:
+            - img [ref=e79]
+            - generic [ref=e81]: Gerências e Áreas
+          - button "Tipos de Grupo" [ref=e82] [cursor=pointer]:
+            - img [ref=e84]
+            - generic [ref=e89]: Tipos de Grupo
+          - button "Checklists" [ref=e90] [cursor=pointer]:
+            - img [ref=e92]
+            - generic [ref=e96]: Checklists
+          - button "Grupos" [ref=e97] [cursor=pointer]:
+            - img [ref=e99]
+            - generic [ref=e104]: Grupos
+      - generic [ref=e107]:
+        - generic [ref=e109]: CS
+        - generic [ref=e110]:
+          - paragraph [ref=e111]: Carlos Silva
+          - button "Puma" [ref=e112] [cursor=pointer]:
+            - img [ref=e113]
+            - generic [ref=e115]: Puma
+            - img [ref=e116]
+  - button [ref=e121] [cursor=pointer]:
+    - img [ref=e122]
+  - main [ref=e125]:
+    - generic [ref=e128]:
+      - generic [ref=e129]:
+        - generic:
+          - img
+        - generic [ref=e130]:
+          - generic [ref=e131]:
+            - navigation [ref=e132]:
+              - generic [ref=e133]: Grupos
+              - img [ref=e341]
+              - generic [ref=e343]: Grupos Administrativos
+            - paragraph [ref=e134]: GRUPOS ADMINISTRATIVOS
+            - heading "Grupos Administrativos" [level=1] [ref=e630]
+            - paragraph [ref=e136]: Times administrativos da unidade com checklist próprio e metas dedicadas.
+          - generic [ref=e137]:
+            - generic [ref=e138]:
+              - paragraph [ref=e139]: Total
+              - paragraph [ref=e140]: "2"
+            - generic [ref=e142]:
+              - paragraph [ref=e143]: Tipos
+              - paragraph [ref=e144]: "1"
+            - generic [ref=e146]:
+              - paragraph [ref=e147]: Membros
+              - paragraph [ref=e148]: "5"
+      - generic [ref=e149]:
+        - generic [ref=e151]:
+          - generic:
+            - img
+          - textbox "Buscar grupo..." [ref=e152]
+        - generic [ref=e153]:
+          - button "Filtros" [ref=e154] [cursor=pointer]:
+            - img [ref=e155]
+          - generic [ref=e345]:
+            - button "Cards" [ref=e346] [cursor=pointer]:
+              - img [ref=e348]
+              - generic [ref=e353]: Cards
+            - button "Tabela" [ref=e354] [cursor=pointer]:
+              - img [ref=e355]
+              - generic [ref=e356]: Tabela
+      - paragraph [ref=e166]: 2 grupos
+      - generic [ref=e358]:
+        - generic [ref=e632] [cursor=pointer]:
+          - generic [ref=e633]:
+            - generic [ref=e634]:
+              - heading "Equipe Gamma" [level=3] [ref=e635]
+              - paragraph [ref=e636]: Gerência Administrativa — Escritório Central
+            - generic [ref=e637]: Administrativo
+          - generic [ref=e638]:
+            - generic [ref=e648]: 1/3
+            - generic [ref=e649]: 65%
+          - generic [ref=e650]:
+            - generic [ref=e651]: "Ultima: 27/02/2026"
+            - generic [ref=e652]:
+              - button "Aplicar Auditoria" [ref=e653]:
+                - img [ref=e654]
+              - button "Aplicar Follow-up" [ref=e658]:
+                - img [ref=e659]
+              - button "Ver Histórico" [ref=e662]:
+                - img [ref=e663]
+        - generic [ref=e667] [cursor=pointer]:
+          - generic [ref=e668]:
+            - generic [ref=e669]:
+              - heading "Equipe Eta" [level=3] [ref=e670]
+              - paragraph [ref=e671]: Gerência Administrativa — Escritório Central
+            - generic [ref=e672]: Administrativo
+          - generic [ref=e673]:
+            - generic [ref=e683]: 2/3
+            - generic [ref=e684]: 82%
+          - generic [ref=e685]:
+            - generic [ref=e686]: "Ultima: 13/03/2026"
+            - generic [ref=e687]:
+              - button "Aplicar Auditoria" [ref=e688]:
+                - img [ref=e689]
+              - button "Aplicar Follow-up" [ref=e693]:
+                - img [ref=e694]
+              - button "Ver Histórico" [ref=e697]:
+                - img [ref=e698]

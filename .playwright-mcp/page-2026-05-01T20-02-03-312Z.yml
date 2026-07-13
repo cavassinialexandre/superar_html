@@ -1,0 +1,200 @@
+- generic [ref=e3]:
+  - complementary [ref=e150]:
+    - generic [ref=e151]:
+      - generic [ref=e152]:
+        - img [ref=e154]
+        - generic [ref=e158]:
+          - heading "Superar Digital" [level=1] [ref=e159]
+          - paragraph [ref=e160]: KAIZEN/TPM 4.0
+      - paragraph [ref=e162]: Menu
+      - navigation [ref=e163]:
+        - button "Dashboard" [ref=e164] [cursor=pointer]:
+          - img [ref=e166]
+          - generic [ref=e171]: Dashboard
+        - button "Histórico" [ref=e172] [cursor=pointer]:
+          - img [ref=e174]
+          - generic [ref=e177]: Histórico
+        - paragraph [ref=e179]: Grupos
+        - generic [ref=e180]:
+          - button "Geral" [ref=e181] [cursor=pointer]:
+            - img [ref=e184]
+            - generic [ref=e189]: Geral
+          - button "Operacional" [ref=e190] [cursor=pointer]:
+            - img [ref=e192]
+            - generic [ref=e197]: Operacional
+          - button "Administrativo" [ref=e198] [cursor=pointer]:
+            - img [ref=e200]
+            - generic [ref=e205]: Administrativo
+          - button "5S" [ref=e206] [cursor=pointer]:
+            - img [ref=e208]
+            - generic [ref=e213]: 5S
+        - paragraph [ref=e215]: Administração
+        - generic [ref=e216]:
+          - button "Usuários" [ref=e217] [cursor=pointer]:
+            - img [ref=e219]
+            - generic [ref=e222]: Usuários
+          - button "Gerências e Áreas" [ref=e223] [cursor=pointer]:
+            - img [ref=e225]
+            - generic [ref=e227]: Gerências e Áreas
+          - button "Tipos de Grupo" [ref=e228] [cursor=pointer]:
+            - img [ref=e230]
+            - generic [ref=e235]: Tipos de Grupo
+          - button "Checklists" [ref=e236] [cursor=pointer]:
+            - img [ref=e238]
+            - generic [ref=e242]: Checklists
+          - button "Grupos" [ref=e243] [cursor=pointer]:
+            - img [ref=e245]
+            - generic [ref=e250]: Grupos
+      - generic [ref=e253]:
+        - generic [ref=e255]: CS
+        - generic [ref=e256]:
+          - paragraph [ref=e257]: Carlos Silva
+          - button "Puma" [ref=e258] [cursor=pointer]:
+            - img [ref=e259]
+            - generic [ref=e261]: Puma
+            - img [ref=e262]
+  - button [ref=e267] [cursor=pointer]:
+    - img [ref=e268]
+  - main [ref=e7]:
+    - generic [ref=e271]:
+      - generic [ref=e272]:
+        - generic [ref=e273]:
+          - generic:
+            - img
+          - generic [ref=e274]:
+            - generic [ref=e275]:
+              - navigation [ref=e276]:
+                - generic [ref=e277]: Grupos
+              - paragraph [ref=e278]: GESTÃO DE GRUPOS
+              - heading "Todos os Grupos" [level=1] [ref=e279]
+              - paragraph [ref=e280]: Visão geral de todos os grupos organizados por área da unidade.
+            - generic [ref=e281]:
+              - generic [ref=e282]:
+                - paragraph [ref=e283]: Total
+                - paragraph [ref=e284]: "7"
+              - generic [ref=e286]:
+                - paragraph [ref=e287]: Tipos
+                - paragraph [ref=e288]: "3"
+              - generic [ref=e290]:
+                - paragraph [ref=e291]: Membros
+                - paragraph [ref=e292]: "38"
+        - button "Filtros Expandir Nenhum filtro ativo" [ref=e294] [cursor=pointer]:
+          - img [ref=e295]
+          - generic [ref=e297]: Filtros
+          - generic [ref=e298]: Expandir
+          - img [ref=e300]
+          - generic [ref=e302]: Nenhum filtro ativo
+      - generic [ref=e303]:
+        - paragraph [ref=e304]: 7 grupos em 6 áreas
+        - tablist "Layout de visão geral" [ref=e306]:
+          - tab "Accordion" [selected] [ref=e307] [cursor=pointer]:
+            - generic [ref=e309]:
+              - img [ref=e310]
+              - text: Accordion
+          - tab "Kanban" [ref=e311] [cursor=pointer]:
+            - generic [ref=e312]:
+              - img [ref=e313]
+              - text: Kanban
+          - tab "Timeline" [ref=e317] [cursor=pointer]:
+            - generic [ref=e318]:
+              - img [ref=e319]
+              - text: Timeline
+      - generic [ref=e324]:
+        - button "Expandir todos" [ref=e326] [cursor=pointer]
+        - generic [ref=e327]:
+          - button "Escritório Central 2 Gerência Administrativa 2 grupos 5 membros 74%" [ref=e330] [cursor=pointer]:
+            - img [ref=e332]
+            - generic [ref=e334]:
+              - generic [ref=e335]:
+                - heading "Escritório Central" [level=3] [ref=e336]
+                - generic [ref=e337]: "2"
+              - paragraph [ref=e338]: Gerência Administrativa
+            - generic [ref=e339]:
+              - generic [ref=e340]:
+                - img [ref=e341]
+                - generic [ref=e346]: 2 grupos
+              - generic [ref=e347]:
+                - img [ref=e348]
+                - generic [ref=e351]: 5 membros
+              - generic [ref=e352]: 74%
+            - img [ref=e354]
+          - button "Almoxarifado 1 Gerência de Manutenção 1 grupos 2 membros 45%" [ref=e358] [cursor=pointer]:
+            - img [ref=e360]
+            - generic [ref=e362]:
+              - generic [ref=e363]:
+                - heading "Almoxarifado" [level=3] [ref=e364]
+                - generic [ref=e365]: "1"
+              - paragraph [ref=e366]: Gerência de Manutenção
+            - generic [ref=e367]:
+              - generic [ref=e368]:
+                - img [ref=e369]
+                - generic [ref=e374]: 1 grupos
+              - generic [ref=e375]:
+                - img [ref=e376]
+                - generic [ref=e379]: 2 membros
+              - generic [ref=e380]: 45%
+            - img [ref=e382]
+          - button "Oficina Central 1 Gerência de Manutenção 1 grupos 5 membros 93%" [ref=e386] [cursor=pointer]:
+            - img [ref=e388]
+            - generic [ref=e390]:
+              - generic [ref=e391]:
+                - heading "Oficina Central" [level=3] [ref=e392]
+                - generic [ref=e393]: "1"
+              - paragraph [ref=e394]: Gerência de Manutenção
+            - generic [ref=e395]:
+              - generic [ref=e396]:
+                - img [ref=e397]
+                - generic [ref=e402]: 1 grupos
+              - generic [ref=e403]:
+                - img [ref=e404]
+                - generic [ref=e407]: 5 membros
+              - generic [ref=e408]: 93%
+            - img [ref=e410]
+          - button "Linha de Montagem A 1 Gerência de Produção 1 grupos 20 membros 87%" [ref=e414] [cursor=pointer]:
+            - img [ref=e416]
+            - generic [ref=e418]:
+              - generic [ref=e419]:
+                - heading "Linha de Montagem A" [level=3] [ref=e420]
+                - generic [ref=e421]: "1"
+              - paragraph [ref=e422]: Gerência de Produção
+            - generic [ref=e423]:
+              - generic [ref=e424]:
+                - img [ref=e425]
+                - generic [ref=e430]: 1 grupos
+              - generic [ref=e431]:
+                - img [ref=e432]
+                - generic [ref=e435]: 20 membros
+              - generic [ref=e436]: 87%
+            - img [ref=e438]
+          - button "Linha de Montagem B 1 Gerência de Produção 1 grupos 3 membros 72%" [ref=e442] [cursor=pointer]:
+            - img [ref=e444]
+            - generic [ref=e446]:
+              - generic [ref=e447]:
+                - heading "Linha de Montagem B" [level=3] [ref=e448]
+                - generic [ref=e449]: "1"
+              - paragraph [ref=e450]: Gerência de Produção
+            - generic [ref=e451]:
+              - generic [ref=e452]:
+                - img [ref=e453]
+                - generic [ref=e458]: 1 grupos
+              - generic [ref=e459]:
+                - img [ref=e460]
+                - generic [ref=e463]: 3 membros
+              - generic [ref=e464]: 72%
+            - img [ref=e466]
+          - button "Laboratório 1 Gerência de Qualidade 1 grupos 3 membros 78%" [ref=e470] [cursor=pointer]:
+            - img [ref=e472]
+            - generic [ref=e474]:
+              - generic [ref=e475]:
+                - heading "Laboratório" [level=3] [ref=e476]
+                - generic [ref=e477]: "1"
+              - paragraph [ref=e478]: Gerência de Qualidade
+            - generic [ref=e479]:
+              - generic [ref=e480]:
+                - img [ref=e481]
+                - generic [ref=e486]: 1 grupos
+              - generic [ref=e487]:
+                - img [ref=e488]
+                - generic [ref=e491]: 3 membros
+              - generic [ref=e492]: 78%
+            - img [ref=e494]

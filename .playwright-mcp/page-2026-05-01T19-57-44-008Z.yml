@@ -1,0 +1,10 @@
+- generic [ref=e4]:
+  - button [ref=e5] [cursor=pointer]:
+    - img [ref=e6]
+  - main [ref=e7]:
+    - generic [ref=e10]:
+      - navigation [ref=e13]:
+        - generic [ref=e15]: Histórico
+      - generic [ref=e18]:
+        - img [ref=e19]
+        - generic [ref=e22]: Carregando…

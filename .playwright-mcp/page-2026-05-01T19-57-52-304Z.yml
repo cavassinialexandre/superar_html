@@ -1,0 +1,92 @@
+- generic [ref=e4]:
+  - button [ref=e5] [cursor=pointer]:
+    - img [ref=e6]
+  - main [ref=e7]:
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic:
+          - img
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - navigation [ref=e28]:
+              - generic [ref=e29]: Grupos
+            - paragraph [ref=e30]: GESTÃO DE GRUPOS
+            - heading "Todos os Grupos" [level=1] [ref=e31]
+            - paragraph [ref=e32]: Visão geral de todos os grupos organizados por área da unidade.
+          - generic [ref=e33]:
+            - generic [ref=e34]:
+              - paragraph [ref=e35]: Total
+              - paragraph [ref=e36]: "7"
+            - generic [ref=e37]:
+              - paragraph [ref=e38]: Tipos
+              - paragraph [ref=e39]: "3"
+            - generic [ref=e40]:
+              - paragraph [ref=e41]: Membros
+              - paragraph [ref=e42]: "38"
+      - generic [ref=e43]:
+        - generic [ref=e45]:
+          - generic:
+            - img
+          - textbox "Buscar grupo..." [ref=e46]
+        - generic [ref=e47]:
+          - button "Filtros" [ref=e48] [cursor=pointer]:
+            - img [ref=e49]
+          - generic [ref=e51]:
+            - button "Accordion" [ref=e52] [cursor=pointer]:
+              - generic [ref=e54]: Accordion
+            - button "Kanban" [ref=e55] [cursor=pointer]:
+              - generic [ref=e56]: Kanban
+            - button "Timeline" [ref=e57] [cursor=pointer]:
+              - generic [ref=e58]: Timeline
+      - paragraph [ref=e60]: 7 grupos em 6 áreas
+      - generic [ref=e62]:
+        - button "Expandir todos" [ref=e64] [cursor=pointer]
+        - generic [ref=e65]:
+          - button "Escritório Central 2 Gerência Administrativa" [ref=e68] [cursor=pointer]:
+            - img [ref=e70]
+            - generic [ref=e72]:
+              - generic [ref=e73]:
+                - heading "Escritório Central" [level=3] [ref=e74]
+                - generic [ref=e75]: "2"
+              - paragraph [ref=e76]: Gerência Administrativa
+            - img [ref=e78]
+          - button "Almoxarifado 1 Gerência de Manutenção" [ref=e82] [cursor=pointer]:
+            - img [ref=e84]
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - heading "Almoxarifado" [level=3] [ref=e88]
+                - generic [ref=e89]: "1"
+              - paragraph [ref=e90]: Gerência de Manutenção
+            - img [ref=e92]
+          - button "Oficina Central 1 Gerência de Manutenção" [ref=e96] [cursor=pointer]:
+            - img [ref=e98]
+            - generic [ref=e100]:
+              - generic [ref=e101]:
+                - heading "Oficina Central" [level=3] [ref=e102]
+                - generic [ref=e103]: "1"
+              - paragraph [ref=e104]: Gerência de Manutenção
+            - img [ref=e106]
+          - button "Linha de Montagem A 1 Gerência de Produção" [ref=e110] [cursor=pointer]:
+            - img [ref=e112]
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - heading "Linha de Montagem A" [level=3] [ref=e116]
+                - generic [ref=e117]: "1"
+              - paragraph [ref=e118]: Gerência de Produção
+            - img [ref=e120]
+          - button "Linha de Montagem B 1 Gerência de Produção" [ref=e124] [cursor=pointer]:
+            - img [ref=e126]
+            - generic [ref=e128]:
+              - generic [ref=e129]:
+                - heading "Linha de Montagem B" [level=3] [ref=e130]
+                - generic [ref=e131]: "1"
+              - paragraph [ref=e132]: Gerência de Produção
+            - img [ref=e134]
+          - button "Laboratório 1 Gerência de Qualidade" [ref=e138] [cursor=pointer]:
+            - img [ref=e140]
+            - generic [ref=e142]:
+              - generic [ref=e143]:
+                - heading "Laboratório" [level=3] [ref=e144]
+                - generic [ref=e145]: "1"
+              - paragraph [ref=e146]: Gerência de Qualidade
+            - img [ref=e148]
